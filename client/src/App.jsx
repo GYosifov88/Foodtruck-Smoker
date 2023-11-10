@@ -1,3 +1,5 @@
+import { Routes, Route } from 'react-router-dom';
+
 import Footer from "./components/Footer/Footer"
 import Navigation from "./components/Navigation/Navigation"
 import Location from "./components/Location/Location"
@@ -24,13 +26,17 @@ function App() {
     
       <div id="ct_preloader" style={{ display: "none" }}></div>
       <Navigation />
-      <Location />
-      <Recommendations />
-      <Menu />
-      <Events />
-      <Story />
-      <Gallery />
-      <MyAccount />
+
+      <Routes>
+        <Route path="/" element={<Location />} /> 
+        <Route path="/recommendations" element={<Recommendations />} /> 
+        <Route path="/menu" element={<Menu />} /> 
+        <Route path="/events" element={<Events />} />
+        <Route path="/story" element={<Story />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/myaccount" element={<MyAccount />} />
+      </Routes>
+             
       <Footer />
     
     </div> 

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Navigation() {
   return (
     <nav className="navbar navbar-default full-sticky-menu" role="navigation">
@@ -85,13 +87,13 @@ export default function Navigation() {
               data-pos={100}
             >
               <li className="active">
-                <a href="#location">About</a>
+                <Link to="/">Home</Link>                
               </li>
               <li>
-                <a href="#menu">Menu</a>
+              <Link to="/menu">Menu</Link>                
               </li>
               <li>
-                <a href="#events">Events</a>
+              <Link to="/events">Events</Link>
               </li>
             </ul>
             <ul
@@ -100,13 +102,13 @@ export default function Navigation() {
               data-pos={100}
             >
               <li>
-                <a href="#story">Story</a>
+              <Link to="/story">Story</Link>
               </li>
               <li>
-                <a href="#gallery">Gallery</a>
+              <Link to="/gallery">Gallery</Link>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+              <Link to="/myaccount">My Account</Link>
               </li>
             </ul>
           </div>
