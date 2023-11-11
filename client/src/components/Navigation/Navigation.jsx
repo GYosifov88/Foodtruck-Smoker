@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navigation() {
   return (
+
     <nav className="navbar navbar-default full-sticky-menu" role="navigation">
       <div className="inner">
         <div className="container">
@@ -118,6 +119,5 @@ export default function Navigation() {
         <div className="btm" />
       </div>
     </nav>
-
   )
 }

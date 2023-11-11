@@ -25,11 +25,11 @@ function App() {
     <div className="preloader">
     
       <div id="ct_preloader" style={{ display: "none" }}></div>
-      <Navigation />
-
+      <div id="undefined-sticky-wrapper" className="sticky-wrapper">    
+        <Navigation />
+      </div> 
       <Routes>
-        <Route path="/" element={<Location />} /> 
-        <Route path="/recommendations" element={<Recommendations />} /> 
+        <Route path="/" element={<Recommendations />} /> 
         <Route path="/menu" element={<Menu />} /> 
         <Route path="/events" element={<Events />} />
         <Route path="/story" element={<Story />} />
@@ -39,7 +39,8 @@ function App() {
              
       <Footer />
     
-    </div> 
+    
+    </div>
   )
 }
 

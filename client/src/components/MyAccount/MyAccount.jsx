@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RegisterFormModal from "../RegisterFormModal/RegisterFormModal";
 import * as userService from "../../services/userService";
 import styles from './MyAccount.module.css'
@@ -8,6 +8,12 @@ export default function MyAccount() {
     const [showCreate, setShowCreate] = useState(false);
     const [usernameValue, setUsernameValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
+
+    useEffect(() => {
+        userService.getAll()
+            .then(result => setUsers(result))
+            .catch(err => console.log(err))
+    }, []);
 
     const createUserClickHandler = () => {
         setShowCreate(true);
@@ -61,8 +67,7 @@ export default function MyAccount() {
                                 <input
                                     className="btn btn-default"
                                     type="submit    "
-                                    defaultValue="Register"
-                                    value="Register"
+                                    defaultValue="Register"                                    
                                     onClick={createUserClickHandler}
                                 />
                                 {/* <form
@@ -134,7 +139,9 @@ export default function MyAccount() {
                                     method="post"
                                 >
                                     <fieldset>
-                                        <div className="form-group">
+                                        {/* //ToDo - Login will be here */}
+
+                                        {/* <div className="form-group">
                                             <input
                                                 className="form-control"
                                                 type="username"
@@ -153,7 +160,7 @@ export default function MyAccount() {
                                                 required=""
                                                 placeholder="password"
                                             />
-                                        </div>
+                                        </div> */}
                                         {/* <input
                                             type="hidden"
                                             name="msg_subject"

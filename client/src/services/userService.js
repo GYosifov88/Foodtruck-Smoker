@@ -18,18 +18,9 @@ export const getOne = async (userId) => {
 
 export const create = async (data) => {
     const body = {
-        username: data.firstName,
+        username: data.username,
         email: data.email,
         password: data.password,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-        favourites: data.favourites,
-        address: {
-            country: data.country,
-            city: data.city,
-            street: data.street,
-            streetNumber: data.streetNumber,
-        }
     };
 
     const response = await fetch(baseUrl, {

@@ -12,7 +12,7 @@ export default function Recommendations() {
                 </div>
                 {/* ************************* */}
                 {/* ** FULL PRODUCT SLIDER ** */}
-                <div className="flexFull flexslider loading-slider text-center">
+                {/* <div className="flexFull flexslider loading-slider text-center">
                     <ul className="slides">
                         <li>
                             <div className="container">
@@ -65,70 +65,38 @@ export default function Recommendations() {
                             </div>
                         </li>
                     </ul>
+                </div> */}
+                <div className="row nomargin threeBoxes" id="location">
+                    <div className="col-md-4 col-sm-4">
+                        <div className='home full-width-photo'>
+                            <img className='homepic' src="./src/assets/food_images/brisket-flat-mk4-signals-38-of-47.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-sm-4">
+                        <div className='home full-width-photo'>
+                            <img className='homepic' src="./src/assets/food_images/Large-barbecue-smoker-grill.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div className="col-md-4 col-sm-4">
+                        <div className="home full-width-photo">
+                            <h3 id='headtext' className="big">Meet the first smoker food truck in Bulgaria. We are two very passionate smoking meat enthusiasts. Come and meet us and enjoy the rich tense flavour of smoked meat.</h3>
+                            {/* <div className="tweets">
+                                <div>
+                                    <p>daskjdghbasdjkgasjkdih</p>
+                                </div>
+                            </div> */}
+                        </div>
+                    </div>
                 </div>
-                {/* / flexslider */}
-                {/* ******************* */}
-                {/* ** CIRCLE SLIDER ** */}
-                {/*
-    <div class="space50px"></div>
-    <div class="container">
-<div class="row">
-  <div class="col-md-8">
-    <div class="flexFade flexslider loading-slider text-right">
-      <ul class="slides">
-        <li>
-          <div class="descArea">
-            <h4>Hot from<br>the Grill</h4>
-            <hr>
-            <h5>Fire roasted T-Bone Steak with fries</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt
-            </p>
-            <span class="price"><em>$</em>11<span>99</span></span>
+                {/* <div className="container">
+                    <div className="text-center">
+                        <div className='home full-width-photo'>
+                            <h4>We are the first Food truck with smoked meat</h4>
+                            <img className='homepic' src="./src/assets/food_images/brisket-flat-mk4-signals-38-of-47.jpg" alt="" />
+                        </div>
 
-          </div>
-          <div class="roundedImg" data-size="320">
-            <img class="media-object" src="../assets/flavours/bigsmokebbq/images/content/photo-3.jpg" alt=" ">
-          </div>
-        </li>
-        <li>
-          <div class="descArea">
-            <h4>Our <br>Starters</h4>
-            <hr>
-            <h5>Rib Eye Burger with homemade sauce</h5>
-            <p>
-              Pellentesque eget augue et ipsum laoreet ultrices eget ut est. Donec tincidunt justo nec lobortis molestie.
-            </p>
-            <span class="price"><em>$</em>9<span>99</span></span>
-
-          </div>
-          <div class="roundedImg" data-size="320">
-            <img class="media-object" src="../assets/flavours/bigsmokebbq/images/content/photo-4.jpg" alt=" ">
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <h4 class="hdr7">About Us</h4>
-
-    <div class="roundedImg pull-right" data-size="160">
-      <img class="media-object" src="../assets/flavours/bigsmokebbq/images/content/photo-5.jpg" alt=" ">
-    </div>
-    <p class="bigger highlighted">
-      Hello Foody! We have traveled countless miles, hundreds of sailing through storms to find out where is the best and freshest food in the world.
-      <br>
-      Ultimately we have brought them to our restaurant to let you enjoy this priceless treasure.<br><br>
-      Please consider yourself. Good Appetite!<br>
-      Your Chef Team<br>
-    </p>
-
-  </div>
-</div>
-    </div>
-    <div class="space50px"></div>
-    */}
+                    </div>
+                </div> */}
                 <div className="container">
                     <div className="text-center">
                         <img

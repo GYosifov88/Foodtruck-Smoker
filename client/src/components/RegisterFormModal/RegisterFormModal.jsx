@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
 
 export default function RegisterFormModal({
     onClose,
@@ -7,6 +8,7 @@ export default function RegisterFormModal({
     const [usernameValue, setUsernameValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
     const [emailValue, setEmailValue] = useState('');
+
 
     const usernameChangeHandler = (e) => {
         setUsernameValue(e.target.value);
@@ -20,17 +22,14 @@ export default function RegisterFormModal({
         setEmailValue(e.target.value);
     };
 
-    const resetFormHandler = () => {
-        setUsernameValue('');
-        setPasswordValue('');
-        setEmailValue('');
+    const closeFormHandler = () => {
     };
     
     const submitHandler = () => {
         console.log(usernameValue);
         console.log(passwordValue);
-        console.log(ageValue);
-        resetFormHandler();
+        console.log(emailValue);
+        closeFormHandler();
     };
 
     return (
@@ -59,47 +58,47 @@ export default function RegisterFormModal({
                                 <input
                                     type="text"
                                     className="form-control"
-                                    id="username"
                                     name="username"
+                                    id="username"
+                                    placeholder="enter your name"
                                     value={usernameValue}
                                     onChange={usernameChangeHandler}
-                                    placeholder="enter your username"
+                                // onBlur={() => console.log('onBlur')}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">E-mail address</label>
+                                <input
+                                    type="email"
+                                    required=""
+                                    id="email"
+                                    className="form-control"
+                                    name="email"
+                                    placeholder="enter your e-mail address"
+                                    value={emailValue}
+                                    onChange={emailChangeHandler}
+
                                 />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
                                 <input
                                     type="password"
+                                    className="form-control"
                                     name="password"
                                     id="password"
+                                    placeholder="type your password"
                                     value={passwordValue}
-                                    placeholder="enter your password"
                                     onChange={passwordChangeHandler}
                                 />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    value={emailValue}
-                                    onChange={emailChangeHandler}
-                                    placeholder="enter your email"
-                                />
-                            </div>
-                            <input
-                                type="hidden"
-                                name="msg_subject"
-                                defaultValue="Contact Form"
-                            />
-                            <input type="hidden" name="field_[]" defaultValue=" " />
-                            <input
-                                className="btn btn-default"
-                                type="submit"
-                                defaultValue="Register"
-                                onClick={submitHandler}
-                            />
+                                                       
+                            <div id="form-actions">
+                            <button id="action-save" className="btn btn-default" type="submit" onClick={submitHandler}>Register</button>
+                            <button id="action-cancel" className="btn" type="button" onClick={onClose}>
+                                Cancel
+                            </button>
+                        </div>
                         </fieldset>
                     </form>
                 </div>

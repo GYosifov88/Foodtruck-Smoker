@@ -1,4 +1,32 @@
+import * as menuService from "../../services/menuService";
+import { useState, useEffect } from "react";
+import MenuItem from "./MenuItem";
+import MenuBbqItem from "./MenuItem";
+import MenuBeverageItem from "./MenuItem";
+
 export default function Menu() {
+
+    const [bbqMenus, setBbqMenus] = useState([]);
+    const [sideMenus, setSideMenus] = useState([]);
+    const [beveragesMenus, setBeveragesMenus] = useState([]);
+
+    useEffect(() => {
+        menuService.getAllBBQDishes()
+            .then(result => setBbqMenus(result))
+            .catch(err => console.log(err))
+    }, []);
+    useEffect(() => {
+        menuService.getAllSideDishes()
+            .then(result => setSideMenus(result))
+            .catch(err => console.log(err))
+    }, []);
+    useEffect(() => {
+        menuService.getAllBeveragesDishes()
+            .then(result => setBeveragesMenus(result))
+            .catch(err => console.log(err))
+    }, []);
+
+
     return (
         <div className="bg-2 topOrnament section">
             <div className="inner">
@@ -12,152 +40,23 @@ export default function Menu() {
                                         src="./src/assets/flavours/bigsmokebbq/images/content/icon-1.png"
                                         alt=" "
                                     />
-                                    <span>Starters</span>
+                                    <span>Sides</span>
                                 </div>
                                 <div className="inner">
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-1.jpg"
-                                            data-rel="prettyPhoto[menu1]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-1.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Sandwich</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>7
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-2.jpg"
-                                            data-rel="prettyPhoto[menu1]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-2.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Big Sandwich</span>
-                                            <p>
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>4<span>99</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
+                                    {sideMenus.map(side => (
+                                        <MenuItem
+                                            key={side._id}
+                                            eventId={side._id}
+                                            category={side.month}         
+                                            title={side.title}         
+                                            price={side.price}
+                                            description={side.description}       
+                                            imageUrl={side.imageUrl}       
+                                        />
+                                    ))}
+
                                 </div>
                             </div>
-                            {/* / menuBox */}
-                            <div className="menuBox type2">
-                                <div className="top">
-                                    <img
-                                        src="./src/assets/flavours/bigsmokebbq/images/content/icon-2.png"
-                                        alt=" "
-                                    />
-                                    <span>Desserts</span>
-                                </div>
-                                <div className="inner">
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-3.jpg"
-                                            data-rel="prettyPhoto[menu2]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-3.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Waffle &amp; Ice cream</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>7
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-4.jpg"
-                                            data-rel="prettyPhoto[menu2]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-4.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Vanilla Waffle</span>
-                                            <p>
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>4<span>99</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-5.jpg"
-                                            data-rel="prettyPhoto[menu2]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-5.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Brullee Waffle</span>
-                                            <p>Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                            <span className="price">
-                                                <em>$</em>6
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                </div>
-                            </div>
-                            {/* / menuBox */}
                         </div>
                         <div className="col-md-4 col-sm-6">
                             <div className="menuBox type3">
@@ -169,186 +68,17 @@ export default function Menu() {
                                     <span>BBQ Dish</span>
                                 </div>
                                 <div className="inner">
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-6.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-6.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">T-Bone Steak</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>7
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-7.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-7.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Rib Eye Steak</span>
-                                            <p>
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>4<span>99</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-8.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-8.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Rump Steak</span>
-                                            <p>Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                            <span className="price">
-                                                <em>$</em>6
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-9.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-9.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Pulled Pork Slider</span>
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>7
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-10.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-10.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Portobello Slider</span>
-                                            <p>
-                                                Sed do eiusmod tempor incididunt ut labore et dolore magna
-                                                aliqua.
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>4<span>99</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-11.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-11.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Classic Burger</span>
-                                            <p>Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                            <span className="price">
-                                                <em>$</em>6
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
-                                    <hr />
-                                    <div className="media">
-                                        <a
-                                            className="pull-left"
-                                            href="./src/assets/flavours/bigsmokebbq/images/content/product-small-12.jpg"
-                                            data-rel="prettyPhoto[menu3]"
-                                        >
-                                            <div className="roundedImg" data-size={54}>
-                                                <img
-                                                    className="media-object"
-                                                    src="./src/assets/flavours/bigsmokebbq/images/content/product-small-12.jpg"
-                                                    alt=" "
-                                                />
-                                            </div>
-                                        </a>
-                                        <div className="media-body">
-                                            <span className="title">Mexican Burger</span>
-                                            <p>
-                                                Ut enim ad minim veniam, quis nostrud exercitation Ut enim
-                                                ad minim veniam, quis nostrud exercitation
-                                            </p>
-                                            <span className="price">
-                                                <em>$</em>6
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {/* / item */}
+                                {bbqMenus.map(bbq => (
+                                        <MenuItem
+                                            key={bbq._id}
+                                            eventId={bbq._id}
+                                            category={bbq.month}         
+                                            title={bbq.title}         
+                                            price={bbq.price}
+                                            description={bbq.description}       
+                                            imageUrl={bbq.imageUrl}       
+                                        />
+                                    ))}
                                 </div>
                             </div>
                             {/* / menuBox */}
@@ -360,156 +90,23 @@ export default function Menu() {
                                     <div className="menuBox type4">
                                         <div className="top">
                                             <img
-                                                src="./src/assets/flavours/bigsmokebbq/images/content/icon-4.png"
+                                                src="./src/assets/flavours/bigsmokebbq/images/content/icon-5.png"
                                                 alt=" "
                                             />
                                             <span>Sides</span>
                                         </div>
                                         <div className="inner">
-                                            <div className="media">
-                                                <a
-                                                    className="pull-left"
-                                                    href="./src/assets/flavours/bigsmokebbq/images/content/product-small-13.jpg"
-                                                    data-rel="prettyPhoto[menu4]"
-                                                >
-                                                    <div className="roundedImg" data-size={54}>
-                                                        <img
-                                                            className="media-object"
-                                                            src="./src/assets/flavours/bigsmokebbq/images/content/product-small-13.jpg"
-                                                            alt=" "
-                                                        />
-                                                    </div>
-                                                </a>
-                                                <div className="media-body">
-                                                    <span className="title">Twisted fries</span>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                        elit.
-                                                    </p>
-                                                    <span className="price">
-                                                        <em>$</em>2
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {/* / item */}
-                                            <hr />
-                                            <div className="media">
-                                                <a
-                                                    className="pull-left"
-                                                    href="./src/assets/flavours/bigsmokebbq/images/content/product-small-14.jpg"
-                                                    data-rel="prettyPhoto[menu4]"
-                                                >
-                                                    <div className="roundedImg" data-size={54}>
-                                                        <img
-                                                            className="media-object"
-                                                            src="./src/assets/flavours/bigsmokebbq/images/content/product-small-14.jpg"
-                                                            alt=" "
-                                                        />
-                                                    </div>
-                                                </a>
-                                                <div className="media-body">
-                                                    <span className="title">Garlic Bread</span>
-                                                    <p>
-                                                        Sed do eiusmod tempor incididunt ut labore et dolore
-                                                        magna aliqua.
-                                                    </p>
-                                                    <span className="price">
-                                                        <em>$</em>4<span>99</span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {/* / item */}
-                                            <hr />
-                                            <div className="media">
-                                                <a
-                                                    className="pull-left"
-                                                    href="./src/assets/flavours/bigsmokebbq/images/content/product-small-15.jpg"
-                                                    data-rel="prettyPhoto[menu4]"
-                                                >
-                                                    <div className="roundedImg" data-size={54}>
-                                                        <img
-                                                            className="media-object"
-                                                            src="./src/assets/flavours/bigsmokebbq/images/content/product-small-15.jpg"
-                                                            alt=" "
-                                                        />
-                                                    </div>
-                                                </a>
-                                                <div className="media-body">
-                                                    <span className="title">Roast Potatoe</span>
-                                                    <p>Ut enim ad minim veniam, quis nostrud exercitation</p>
-                                                    <span className="price">
-                                                        <em>$</em>2<span>99</span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {/* / item */}
-                                        </div>
-                                    </div>
-                                    {/* / menuBox */}
-                                </div>
-                                <div className="col-md-12 col-sm-6">
-                                    <div className="menuBox">
-                                        <div className="top">
-                                            <img
-                                                src="./src/assets/flavours/bigsmokebbq/images/content/icon-5.png"
-                                                alt=" "
-                                            />
-                                            <span>Beverages</span>
-                                        </div>
-                                        <div className="inner">
-                                            <div className="media">
-                                                <a
-                                                    className="pull-left"
-                                                    href="./src/assets/flavours/bigsmokebbq/images/content/product-small-16.jpg"
-                                                    data-rel="prettyPhoto[menu5]"
-                                                >
-                                                    <div className="roundedImg" data-size={54}>
-                                                        <img
-                                                            className="media-object"
-                                                            src="./src/assets/flavours/bigsmokebbq/images/content/product-small-16.jpg"
-                                                            alt=" "
-                                                        />
-                                                    </div>
-                                                </a>
-                                                <div className="media-body">
-                                                    <span className="title">Coca-Cola</span>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                                        elit.
-                                                    </p>
-                                                    <span className="price">
-                                                        <em>$</em>2
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {/* / item */}
-                                            <hr />
-                                            <div className="media">
-                                                <a
-                                                    className="pull-left"
-                                                    href="./src/assets/flavours/bigsmokebbq/images/content/product-small-17.jpg"
-                                                    data-rel="prettyPhoto[menu5]"
-                                                >
-                                                    <div className="roundedImg" data-size={54}>
-                                                        <img
-                                                            className="media-object"
-                                                            src="./src/assets/flavours/bigsmokebbq/images/content/product-small-17.jpg"
-                                                            alt=" "
-                                                        />
-                                                    </div>
-                                                </a>
-                                                <div className="media-body">
-                                                    <span className="title">Beer</span>
-                                                    <p>
-                                                        Sed do eiusmod tempor incididunt ut labore et dolore
-                                                        magna aliqua.
-                                                    </p>
-                                                    <span className="price">
-                                                        <em>$</em>2<span>99</span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            {/* / item */}
+                                        {beveragesMenus.map(beverage => (
+                                        <MenuItem
+                                            key={beverage._id}
+                                            eventId={beverage._id}
+                                            category={beverage.month}         
+                                            title={beverage.title}         
+                                            price={beverage.price}
+                                            description={beverage.description}       
+                                            imageUrl={beverage.imageUrl}       
+                                        />
+                                    ))}
                                         </div>
                                     </div>
                                     {/* / menuBox */}
