@@ -1,0 +1,65 @@
+{
+  "07f260f4-466c-4607-9a33-f7273b24f1b4": {
+    "_id": "07f260f4-466c-4607-9a33-f7273b24f1b4",
+    "category": "BBQ Dish",
+    "title": "Pulled Pork",
+    "price": "17lv",
+    "description": "Slowly cooked pig neck with smoked paprika, oregano, black pepper, salt, brown sugar. Marinated for 24 hourse before gently smoked with apple wood."
+  },
+  "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
+    "_id": "07f260f4-466c-4607-9a33-f7273b24f1b4",
+    "category": "Sides",
+    "title": "Garlic Bread",
+    "price": "3lv",
+    "description": "Homemade dough with yeast, baked and coated with virgin olive oil, salt and garlic."
+  },
+  "2dagf5e9-29be-40a1-9f14-9127b6702c9d": {
+    "_id": "2dagf5e9-29be-40a1-9f14-9127b6702c9d",
+    "category": "Sides",
+    "title": "French Fries",
+    "price": "7lv",
+    "description": "Fresh pototaes, double fried with salt, smoked paprika and oregano or with samardala"
+  },
+  "07f260f4-4b6c-4607-9a33-f7173b24c1b4": {
+    "_id": "07f260f4-4b6c-4607-9a33-f7173b24c1b4",
+    "category": "BBQ Dish",
+    "title": "Beef Brisket",
+    "price": "20lv",
+    "description": "Tender beef brisket seasoned only with black pepper, salt and brown sugar. Marinated for 24 hourse before gently smoked with oak wood."
+  },
+  "97f261f4-4b2c-46t7-9a33-f7173q24c1b9": {
+    "_id": "97f261f4-4b2c-46t7-9a33-f7173q24c1b9",
+    "category": "BBQ Dish",
+    "title": "Rib Eye Burger with homemade sauce",
+    "price": "16lv",
+    "description": "Classic beef rib eye burger slowly cooked seasoned nicely, with letuce, pickled onions, tomatoes, halapeno and our homemade sauce with smoked cheese."
+  },
+  "r7f261f5-4b2c-41t7-9l33-f7113q24c7b9": {
+    "_id": "r7f261f5-4b2c-41t7-9l33-f7113q24c7b9",
+    "category": "BBQ Dish",
+    "title": "Pulled chicken",
+    "price": "14lv",
+    "description": "Marinated chicken breast and tights with mediteranean spices, gently smoked with light bbq sauce on the side"
+  },
+  "07f221f5-4v2c-41y9-9l33-f7213q2c4769": {
+    "_id": "07f221f5-4v2c-41y9-9l33-f7213q2c4769",
+    "category": "BBQ Dish",
+    "title": "Slow grilled pulled pork sandwich",
+    "price": "17lv",
+    "description": "Homemade chabata filled with our slowly smoked pulled pork, smoked cheese, homemade spicy salsa with tomatoes, chilli peppers, garlic, parsley and onion."
+  },
+  "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f": {
+    "_id": "07f260f4-466c-4607-9a33-f7273b24f1b4",
+    "category": "Beverages",
+    "title": "Beer",
+    "price": "5lv",
+    "description":"Homemade pale ale beer with citrus notes"
+  },
+  "8b3143e1-d6df-4a67-bd9e-5t8b03f2fd3f": {
+    "_id": "8b3143e1-d6df-4a67-bd9e-5t8b03f2fd3f",
+    "category": "Beverages",
+    "title": "Water",
+    "price": "2lv",
+    "description":"Still water"
+  }
+}
