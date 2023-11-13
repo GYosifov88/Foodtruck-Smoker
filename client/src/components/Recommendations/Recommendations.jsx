@@ -111,24 +111,20 @@ export default function Recommendations() {
                             <div className="prodBox pull-left">
                                 <div className="frameImg">
                                     <img
-                                        src="./src/assets/flavours/bigsmokebbq/images/content/product-1.jpg"
+                                        src="../src/assets/food_images/Pulled-Pork-Slow-Cooker.jpg"
                                         alt=" "
                                     />
                                 </div>
                                 <div className="inner">
                                     <h4>Slow grilled pulled pork sandwich</h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                        eius Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiu.
+                                    Homemade chabata filled with our slowly smoked pulled pork, smoked cheese, homemade spicy salsa with tomatoes, chilli peppers, garlic, parsley and onion
                                     </p>
                                     <span className="price">
                                         <small>just</small>
-                                        <em>$</em>11<span>99</span>
+                                        <em>lv</em>17<span>00</span>
                                     </span>
-                                    <a href="#" className="btn btn-primary btn-sm">
-                                        order now!
-                                    </a>
+                                    
                                 </div>
                             </div>
                             {/* / prodBox */}
@@ -137,23 +133,19 @@ export default function Recommendations() {
                             <div className="prodBox type2">
                                 <div className="frameImg">
                                     <img
-                                        src="./src/assets/flavours/bigsmokebbq/images/content/product-2.jpg"
+                                        src="../src/assets/food_images/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__07__20160801-sous-vide-brisket-guide-35-63bbc7bc88e24f1789427ee9ff2728b3.jpg"
                                         alt=" "
                                     />
                                 </div>
                                 <div className="inner">
-                                    <h4>Rib Eye Burger with homemade sauce</h4>
+                                    <h4>Beef Brisket</h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                        eius Lorem, consectetur adipisicing elit, sed do eiu.
+                                    Tender beef brisket seasoned only with black pepper, salt and brown sugar. Marinated for 24 hourse before gently smoked with oak wood.
                                     </p>
                                     <span className="price">
                                         <small>just</small>
-                                        <em>$</em>9<span>99</span>
+                                        <em>lv</em>20<span>00</span>
                                     </span>
-                                    <a href="#" className="btn btn-primary btn-sm">
-                                        order now!
-                                    </a>
                                 </div>
                             </div>
                             {/* / prodBox */}
@@ -163,23 +155,19 @@ export default function Recommendations() {
                             <div className="prodBox type3 pull-right">
                                 <div className="frameImg">
                                     <img
-                                        src="./src/assets/flavours/bigsmokebbq/images/content/product-3.jpg"
+                                        src="../src/assets/food_images/ribeye-burger.jpg"
                                         alt=" "
                                     />
                                 </div>
                                 <div className="inner">
-                                    <h4>Black Angus Steak with coleslaw</h4>
+                                    <h4>Rib Eye Burger with homemade sauce</h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetudo eius Lorem ipsum dolor
-                                        sit amet, consectetur adipisicing elit, sed do eiu.
+                                    Classic beef rib eye burger slowly cooked seasoned nicely, with letuce, pickled onions, tomatoes, halapeno and our homemade sauce with smoked cheese.
                                     </p>
                                     <span className="price">
                                         <small>just</small>
-                                        <em>$</em>9<span>99</span>
+                                        <em>lv</em>16<span>00</span>
                                     </span>
-                                    <a href="#" className="btn btn-primary btn-sm">
-                                        order now!
-                                    </a>
                                 </div>
                             </div>
                             {/* / prodBox */}

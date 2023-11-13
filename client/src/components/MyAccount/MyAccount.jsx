@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import RegisterFormModal from "../RegisterFormModal/RegisterFormModal";
 import * as userService from "../../services/userService";
 import styles from './MyAccount.module.css'
+import { Link } from 'react-router-dom';
 
-export default function MyAccount() {
+export default function MyAccount({
+    _id,
+}) {
     const [users, setUsers] = useState([]);
     const [showCreate, setShowCreate] = useState(false);
     const [usernameValue, setUsernameValue] = useState('');
@@ -169,7 +172,7 @@ export default function MyAccount() {
                                         <input type="hidden" name="field_[]" defaultValue=" " />
                                         
                                         <button className="btn btn-default" type="button">Login</button>
-
+                                        <button className="btn btn-default" type="button" as={Link} to={`/users/${_id}`} variant="primary">My Account</button>
                                     </fieldset>
                                 </form>
                                 {/* <div className="successMsg" style={{ display: "none" }}>

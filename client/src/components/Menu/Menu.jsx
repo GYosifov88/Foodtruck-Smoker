@@ -1,14 +1,15 @@
 import * as menuService from "../../services/menuService";
 import { useState, useEffect } from "react";
 import MenuItem from "./MenuItem";
-import MenuBbqItem from "./MenuItem";
-import MenuBeverageItem from "./MenuItem";
+import MenuDetailsModal from "../MenuDetailsModal/MenuDetailsModal";
 
 export default function Menu() {
 
     const [bbqMenus, setBbqMenus] = useState([]);
     const [sideMenus, setSideMenus] = useState([]);
     const [beveragesMenus, setBeveragesMenus] = useState([]);
+    const [selectedMenu, setSelectedMenu] = useState(null);
+    const [showInfo, setShowInfo] = useState(false);
 
     useEffect(() => {
         menuService.getAllBBQDishes()
@@ -26,8 +27,22 @@ export default function Menu() {
             .catch(err => console.log(err))
     }, []);
 
+    const menuInfoClickHandler = async (menuid) => {
+        setSelectedMenu(menuid);
+        setShowInfo(true);
+    };
+    const hideoMenuDetailsModal = () => {
+        setShowInfo(false);
+    };
 
     return (
+        <>
+        {showInfo && (
+            <MenuDetailsModal
+                onClose={hideoMenuDetailsModal}
+                menuid={selectedMenu}                    
+            />
+        )}
         <div className="bg-2 topOrnament section">
             <div className="inner">
                 <div className="container">
@@ -46,12 +61,13 @@ export default function Menu() {
                                     {sideMenus.map(side => (
                                         <MenuItem
                                             key={side._id}
-                                            eventId={side._id}
+                                            menuid={side._id}
                                             category={side.month}         
                                             title={side.title}         
                                             price={side.price}
                                             description={side.description}       
-                                            imageUrl={side.imageUrl}       
+                                            imageUrl={side.imageUrl} 
+                                            onInfoClick={menuInfoClickHandler}      
                                         />
                                     ))}
 
@@ -71,12 +87,13 @@ export default function Menu() {
                                 {bbqMenus.map(bbq => (
                                         <MenuItem
                                             key={bbq._id}
-                                            eventId={bbq._id}
+                                            menuid={bbq._id}
                                             category={bbq.month}         
                                             title={bbq.title}         
                                             price={bbq.price}
                                             description={bbq.description}       
-                                            imageUrl={bbq.imageUrl}       
+                                            imageUrl={bbq.imageUrl}
+                                            onInfoClick={menuInfoClickHandler}       
                                         />
                                     ))}
                                 </div>
@@ -93,18 +110,19 @@ export default function Menu() {
                                                 src="./src/assets/flavours/bigsmokebbq/images/content/icon-5.png"
                                                 alt=" "
                                             />
-                                            <span>Sides</span>
+                                            <span>Beverages</span>
                                         </div>
                                         <div className="inner">
                                         {beveragesMenus.map(beverage => (
                                         <MenuItem
                                             key={beverage._id}
-                                            eventId={beverage._id}
+                                            menuid={beverage._id}
                                             category={beverage.month}         
                                             title={beverage.title}         
                                             price={beverage.price}
                                             description={beverage.description}       
-                                            imageUrl={beverage.imageUrl}       
+                                            imageUrl={beverage.imageUrl}
+                                            onInfoClick={menuInfoClickHandler}       
                                         />
                                     ))}
                                         </div>
@@ -121,6 +139,6 @@ export default function Menu() {
                 </div>
             </div>
         </div>
-
+        </>
     )
 }

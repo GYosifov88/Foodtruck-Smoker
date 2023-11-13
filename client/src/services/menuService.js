@@ -44,3 +44,10 @@ export const getAllBeveragesDishes = async () => {
     console.log(filteredBeveragesDishes);
     return filteredBeveragesDishes;
 };
+
+export const getOne = async (menuid) => {
+  const response = await fetch(`${baseUrl}/${menuid}`);
+  const result = await response.json();
+
+  return result;
+};

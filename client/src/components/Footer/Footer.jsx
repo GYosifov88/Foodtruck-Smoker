@@ -6,34 +6,18 @@ export default function Footer() {
                     <div className="col-md-3">
                         <h4>Contact</h4>
                         <p>
-                            Atlantic Avenue 1234,
+                            Around Bulgaria
                             <br />
                             <br />
-                            New York, NY
+                            Varna and VT
                             <br />
                             <br />
-                            123 - 456 - 7891
+                            0888 123 456
                             <br />
                             <br />
                             <a href="mailto:hello@bigsmoke.com">hello@bigsmoke.com</a>
                         </p>
-                        <hr />
-                        <h4>Hours</h4>
-                        <p>
-                            Monday - Friday
-                            <br />
-                            11:00 am - 11:00 pm
-                            <br />
-                            <br />
-                            Saturday &amp; Sunday
-                            <br />
-                            10:45 am - 5:00 pm
-                            <br />
-                            <br />
-                            Saturday &amp; Sunday
-                            <br />
-                            10:45 am - 5:00 pm
-                        </p>
+
                     </div>
                     <div className="col-md-6">
                         <img
@@ -72,13 +56,14 @@ export default function Footer() {
                         </p>
                     </div>
                     <div className="col-md-3">
-                        <h4>Latest Tweets</h4>
-                        <div className="tweets">
-                            <div style={{ display: "none" }}>
-                                here will be displayed live tweets, configuration is placed in
-                                /twitter/config.php
-                            </div>
-                        </div>
+                    <h4>Hours</h4>
+                        <p>                            
+                            Saturday &amp; Sunday
+                            <br />
+                            10:45 am - 5:00 pm
+                            <br />
+                            
+                        </p>
                     </div>
                 </div>
             </div>

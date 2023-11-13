@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navigation() {
   return (
-
+    <div id="undefined-sticky-wrapper" className="sticky-wrapper">   
     <nav className="navbar navbar-default full-sticky-menu" role="navigation">
       <div className="inner">
         <div className="container">
@@ -21,7 +21,7 @@ export default function Navigation() {
             </button>
             <div className="text-center">
               <p className="address">
-                Big Smoke BBQ - Atlantic Avenue 1234, New York, +66 87 65 43 21
+              Foodtruck - Big Smoke BBQ - Bulgaria, Varna, +888 12 34 56
               </p>
             </div>
             <a className="navbar-brand" href="/" data-width={282} data-top={40}>
@@ -119,5 +119,6 @@ export default function Navigation() {
         <div className="btm" />
       </div>
     </nav>
+    </div>
   )
 }
