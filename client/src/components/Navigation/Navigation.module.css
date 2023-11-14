@@ -1,0 +1,24 @@
+/* for adjusting the login and logout buttons */
+
+.regBtn {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    z-index: 3;
+    display:flex;
+    font-family: "chunkfive";
+    font-size: 15px;
+    line-height: 26px;
+    text-transform: none;
+    text-shadow: none;
+    list-style: none;
+    margin-left: 40px;
+    /* /* text-decoration: none; */
+}
+
+.regLi a{
+
+    margin-left: 20px;
+    color: white;
+
+}

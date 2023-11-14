@@ -8,6 +8,8 @@ import Events from "./components/Events/Events"
 import Story from "./components/Story/Story"
 import Gallery from "./components/Gallery/Gallery"
 import MyAccount from "./components/MyAccount/MyAccount"
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import UserAccountDetails from "./components/UserAccountDetails/UserAccountDetails"
 
@@ -15,6 +17,7 @@ import './assets/css/style.css'
 import './assets/css/bootstrap.css'
 import './assets/css/font-awesome.css'
 import './assets/flavours/bigsmokebbq/css/bigsmokebbq.css'
+
 
 // import './assets/bootstrap/less/index.less'
 // import './assets/less/bootstrap.less'
@@ -37,6 +40,8 @@ function App() {
         <Route path="/story" element={<Story />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/myaccount" element={<MyAccount />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/myaccount/:_id" element={<UserAccountDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
