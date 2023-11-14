@@ -8,12 +8,14 @@ import Events from "./components/Events/Events"
 import Story from "./components/Story/Story"
 import Gallery from "./components/Gallery/Gallery"
 import MyAccount from "./components/MyAccount/MyAccount"
+import NotFound from './components/NotFound/NotFound';
 import UserAccountDetails from "./components/UserAccountDetails/UserAccountDetails"
 
 import './assets/css/style.css'
 import './assets/css/bootstrap.css'
 import './assets/css/font-awesome.css'
 import './assets/flavours/bigsmokebbq/css/bigsmokebbq.css'
+
 // import './assets/bootstrap/less/index.less'
 // import './assets/less/bootstrap.less'
 // import './assets/less/media-queries.less'
@@ -36,6 +38,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/myaccount" element={<MyAccount />} />
         <Route path="/myaccount/:_id" element={<UserAccountDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
              
       <Footer />

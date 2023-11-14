@@ -1,0 +1,13 @@
+.notFoundBackground {
+    background-image: url('./background-6.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* width: 100%;
+    height: 100vh; */
+}
+
+.backbtn {
+    font-size: 15px;
+    color:white;
+}
