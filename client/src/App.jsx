@@ -7,6 +7,8 @@ import Menu from "./components/Menu/Menu"
 import Events from "./components/Events/Events"
 import Story from "./components/Story/Story"
 import Gallery from "./components/Gallery/Gallery"
+import GalleryAddItem from './components/GalleryAddItem/GalleryAddItem';
+import GalleryItemDetails from './components/GalleryItemDetails/GalleryItemDetails';
 import MyAccount from "./components/MyAccount/MyAccount"
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
@@ -17,6 +19,8 @@ import './assets/css/style.css'
 import './assets/css/bootstrap.css'
 import './assets/css/font-awesome.css'
 import './assets/flavours/bigsmokebbq/css/bigsmokebbq.css'
+
+
 
 
 // import './assets/bootstrap/less/index.less'
@@ -39,6 +43,8 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/story" element={<Story />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery/add" element={<GalleryAddItem />} />
+        <Route path="/gallery/:id" element={<GalleryItemDetails />} />
         <Route path="/myaccount" element={<MyAccount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

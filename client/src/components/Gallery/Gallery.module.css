@@ -3,3 +3,22 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+.uploadBtn {
+    background-color: rgb(92, 93, 95);
+    text-align: center;
+    border-radius: 10px;
+    width: 170px;
+    height: 70px;
+    font-family: inherit;
+    font-size: inherit;
+    font-size: 30px;
+}
+
+.uploadBtnDiv {
+    text-align: center;
+}
+
+.uploadBtn a {
+    color: whitesmoke;
+}

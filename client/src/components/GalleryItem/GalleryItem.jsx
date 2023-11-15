@@ -1,9 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const GalleryItem = ({
-    id,
-    category,
+    picId,
     title,
     imageUrl
 }) => {
@@ -12,10 +12,7 @@ const GalleryItem = ({
             <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    {category}
-                </Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
+                <Button as={Link} to={`/gallery/${picId}`} variant="primary">Details</Button>
             </Card.Body>
         </Card>
     );
