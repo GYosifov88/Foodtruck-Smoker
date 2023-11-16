@@ -15,12 +15,10 @@ import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import UserAccountDetails from "./components/UserAccountDetails/UserAccountDetails"
 
-import './assets/css/style.css'
-import './assets/css/bootstrap.css'
-import './assets/css/font-awesome.css'
-import './assets/flavours/bigsmokebbq/css/bigsmokebbq.css'
-
-
+// import './assets/css/style.css'
+// import './assets/css/bootstrap.css'
+// import './assets/css/font-awesome.css'
+// import './assets/flavours/bigsmokebbq/css/bigsmokebbq.css'
 
 
 // import './assets/bootstrap/less/index.less'
@@ -31,15 +29,14 @@ import './assets/flavours/bigsmokebbq/css/bigsmokebbq.css'
 
 function App() {
   return (
-    <div className="preloader">
-    
+    <>
       <div id="ct_preloader" style={{ display: "none" }}></div>
-       
-        <Navigation />
-      
+
+      <Navigation />
+
       <Routes>
-        <Route path="/" element={<Recommendations />} /> 
-        <Route path="/menu" element={<Menu />} /> 
+        <Route path="/" element={<Recommendations />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="/events" element={<Events />} />
         <Route path="/story" element={<Story />} />
         <Route path="/gallery" element={<Gallery />} />
@@ -48,14 +45,14 @@ function App() {
         <Route path="/myaccount" element={<MyAccount />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/myaccount/:_id" element={<UserAccountDetails />} />
+        <Route path="/myaccount/:id" element={<UserAccountDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-             
+
       <Footer />
-    
-    
-    </div>
+
+
+    </>
   )
 }
 

@@ -19,11 +19,11 @@ export default function MenuDetailsModal({
             <div className="backdrop" onClick={onClose}></div>
             <div className="modal">
             <div >
-                            <div className={`prodBox type2 ${styles.insideModal}`}>
+                            <div className="prodBox type2">
                                 <div className="frameImg">
                                     <img
                                         src={menu.imageUrl}
-                                        alt=" "
+                                        alt={menu.title}
                                     />
                                 </div>
                                 <div className="inner">
@@ -35,7 +35,7 @@ export default function MenuDetailsModal({
                                         <small>just</small>
                                         <em>lv</em><span>{menu.price}</span>
                                     </span>
-                                    <button className="btn close" onClick={onClose}>Close</button>
+                                    <button className={`btn close ${styles.insideModalBtn}`} onClick={onClose}>Close</button>
                                 </div>
                             </div>
                             {/* / prodBox */}

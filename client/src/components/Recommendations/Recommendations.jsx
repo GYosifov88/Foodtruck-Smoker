@@ -10,62 +10,7 @@ export default function Recommendations() {
                 <div className="container">
                     <h3 className="hdr1 type2">Get the best BBQ in Town</h3>
                 </div>
-                {/* ************************* */}
-                {/* ** FULL PRODUCT SLIDER ** */}
-                {/* <div className="flexFull flexslider loading-slider text-center">
-                    <ul className="slides">
-                        <li>
-                            <div className="container">
-                                <img
-                                    src="./src/assets/flavours/bigsmokebbq/images/content/sliderphoto-1.png"
-                                    alt=" "
-                                />
-                                <h3 className="hdr2">
-                                    Slow grilled pulled pork burger - with homebrewed beer
-                                </h3>
-                                <h4 className="hdr3">
-                                    Pellentesque habitant morbi tristique senectus et netus et
-                                    malesuada fames ac turpis egestas.
-                                </h4>
-                                <div className="priceHeader">
-                                    <span className="lft">Slow grilled pulled pork</span>
-                                    <span className="price">
-                                        <span className="el_1">just</span>
-                                        <span className="el_2">$</span>
-                                        <span className="el_3">12</span>
-                                        <span className="el_4">99</span>
-                                    </span>
-                                    <span className="rt">+ special twisted fries</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="container">
-                                <img
-                                    src="./src/assets/flavours/bigsmokebbq/images/content/sliderphoto-1.png"
-                                    alt=" "
-                                />
-                                <h3 className="hdr2">
-                                    Slow grilled pulled pork burger - with homebrewed beer
-                                </h3>
-                                <h4 className="hdr3">
-                                    Pellentesque habitant morbi tristique senectus et netus et
-                                    malesuada fames ac turpis egestas.
-                                </h4>
-                                <div className="priceHeader">
-                                    <span className="lft">Slow grilled pulled pork</span>
-                                    <span className="price">
-                                        <span className="el_1">just</span>
-                                        <span className="el_2">$</span>
-                                        <span className="el_3">12</span>
-                                        <span className="el_4">99</span>
-                                    </span>
-                                    <span className="rt">+ special twisted fries</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div> */}
+                
                 <div className="row nomargin threeBoxes" id="location">
                     <div className="col-md-4 col-sm-4">
                         <div className='home full-width-photo'>

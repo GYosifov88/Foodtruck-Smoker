@@ -15,46 +15,46 @@ function initmap() {
 		var icon = $this.attr("data-icon");
 		$this.css("min-height", $this.data("height") + "px");
 
-		$this.gmap3({
-			map:{
-			  options:{
-			    zoom: 5
-			  }
-			},
-			marker:{
-			  values:[
-			    {latLng:[48.8620722, 2.352047], data:"Junipers Blvd. 380 Queens, NY 11379, USA", options:{icon: icon}},
-			    {address:"86000 Poitiers, France", data:"Junipers Blvd. 380 Queens, NY 11379, USA", options:{icon: icon}},
-			    {address:"66000 Perpignan, France", data:"Junipers Blvd. 380 Queens, NY 11379, USA", options:{icon: icon}}
-			  ],
-			  options:{
-			    draggable: false
-			  },
-			  events:{
-			    mouseover: function(marker, event, context){
-			      var map = $(this).gmap3("get"),
-			        infowindow = $(this).gmap3({get:{name:"infowindow"}});
-			      if (infowindow){
-			        infowindow.open(map, marker);
-			        infowindow.setContent(context.data);
-			      } else {
-			        $(this).gmap3({
-			          infowindow:{
-			            anchor:marker,
-			            options:{content: context.data}
-			          }
-			        });
-			      }
-			    },
-			    mouseout: function(){
-			      var infowindow = $(this).gmap3({get:{name:"infowindow"}});
-			      if (infowindow){
-			        infowindow.close();
-			      }
-			    }
-			  }
-			}
-			},"autofit");
+		// $this.gmap3({
+		// 	map:{
+		// 	  options:{
+		// 	    zoom: 5
+		// 	  }
+		// 	},
+		// 	marker:{
+		// 	  values:[
+		// 	    {latLng:[48.8620722, 2.352047], data:"Junipers Blvd. 380 Queens, NY 11379, USA", options:{icon: icon}},
+		// 	    {address:"86000 Poitiers, France", data:"Junipers Blvd. 380 Queens, NY 11379, USA", options:{icon: icon}},
+		// 	    {address:"66000 Perpignan, France", data:"Junipers Blvd. 380 Queens, NY 11379, USA", options:{icon: icon}}
+		// 	  ],
+		// 	  options:{
+		// 	    draggable: false
+		// 	  },
+		// 	  events:{
+		// 	    mouseover: function(marker, event, context){
+		// 	      var map = $(this).gmap3("get"),
+		// 	        infowindow = $(this).gmap3({get:{name:"infowindow"}});
+		// 	      if (infowindow){
+		// 	        infowindow.open(map, marker);
+		// 	        infowindow.setContent(context.data);
+		// 	      } else {
+		// 	        $(this).gmap3({
+		// 	          infowindow:{
+		// 	            anchor:marker,
+		// 	            options:{content: context.data}
+		// 	          }
+		// 	        });
+		// 	      }
+		// 	    },
+		// 	    mouseout: function(){
+		// 	      var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+		// 	      if (infowindow){
+		// 	        infowindow.close();
+		// 	      }
+		// 	    }
+		// 	  }
+		// 	}
+		// 	},"autofit");
 	})
 
 
@@ -135,65 +135,65 @@ function initmap() {
 		}
 
 
-		if (validateDataAttr($this.data("location"))) {
+		// if (validateDataAttr($this.data("location"))) {
 
-			$this.gmap3({
-				marker: {
-					address: location,
-					options: {
-						visible: false
-					},
-					callback: function (marker) {
-						atcenter = marker.getPosition();
-					}
-				},
-				map: {
-					options: {
-						//maxZoom:11,
-						zoom: 17,
-						mapTypeId: google.maps.MapTypeId.HYBRID,
-						// ('ROADMAP', 'SATELLITE', 'HYBRID','TERRAIN');
-						scrollwheel: false,
-						disableDoubleClickZoom: false,
-						mapTypeControlOptions: {
-							//mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID],
-							//style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-							//position: google.maps.ControlPosition.RIGHT_CENTER
-							mapTypeIds: []
-						}
-					},
-					events: {
-						idle: function () {
-							if (!$this.data('idle')) {
-								$this.gmap3('get').panBy(0, offset);
-								$this.data('idle', true);
-							}
-						}
-					}
-				},
-				overlay: {
-					address: location,
-					options: {
-						content: '<div class="customMarker"><span>' + text + '</span><i></i></div>',
-						offset: {
-							y: -47,
-							x: -25
-						}
-					}
-				}
-				//},"autofit"
-			});
+		// 	$this.gmap3({
+		// 		marker: {
+		// 			address: location,
+		// 			options: {
+		// 				visible: false
+		// 			},
+		// 			callback: function (marker) {
+		// 				atcenter = marker.getPosition();
+		// 			}
+		// 		},
+		// 		map: {
+		// 			options: {
+		// 				//maxZoom:11,
+		// 				zoom: 17,
+		// 				mapTypeId: google.maps.MapTypeId.HYBRID,
+		// 				// ('ROADMAP', 'SATELLITE', 'HYBRID','TERRAIN');
+		// 				scrollwheel: false,
+		// 				disableDoubleClickZoom: false,
+		// 				mapTypeControlOptions: {
+		// 					//mapTypeIds: [google.maps.MapTypeId.ROADMAP, google.maps.MapTypeId.HYBRID],
+		// 					//style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+		// 					//position: google.maps.ControlPosition.RIGHT_CENTER
+		// 					mapTypeIds: []
+		// 				}
+		// 			},
+		// 			events: {
+		// 				idle: function () {
+		// 					if (!$this.data('idle')) {
+		// 						$this.gmap3('get').panBy(0, offset);
+		// 						$this.data('idle', true);
+		// 					}
+		// 				}
+		// 			}
+		// 		},
+		// 		overlay: {
+		// 			address: location,
+		// 			options: {
+		// 				content: '<div class="customMarker"><span>' + text + '</span><i></i></div>',
+		// 				offset: {
+		// 					y: -47,
+		// 					x: -25
+		// 				}
+		// 			}
+		// 		}
+		// 		//},"autofit"
+		// 	});
 
-			// center on resize
-			google.maps.event.addDomListener(window, "resize", function () {
-				//var userLocation = new google.maps.LatLng(53.8018,-1.553);
-				$this.gmap3('get').setCenter(atcenter);
-				$this.gmap3('get').panBy(0, offset);
-			});
+		// 	// center on resize
+		// 	google.maps.event.addDomListener(window, "resize", function () {
+		// 		//var userLocation = new google.maps.LatLng(53.8018,-1.553);
+		// 		$this.gmap3('get').setCenter(atcenter);
+		// 		$this.gmap3('get').panBy(0, offset);
+		// 	});
 
-			// set height
-			$this.css("min-height", $this.data("height") + "px");
-		}
+		// 	// set height
+		// 	$this.css("min-height", $this.data("height") + "px");
+		// }
 
 	})
 }

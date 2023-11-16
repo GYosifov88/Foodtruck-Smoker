@@ -7,11 +7,11 @@ export default function UserAccountDetails() {
     const location = useLocation();
     const navigate = useNavigate();
     const [user, setUser] = useState({});
-    const { _id } = useParams();
+    const { id } = useParams();
 
 
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/users/${_id}`)
+        fetch(`http://localhost:3030/jsonstore/users/${id}`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Not found');
@@ -23,13 +23,13 @@ export default function UserAccountDetails() {
             .catch((err) => {
                 navigate('/');
             });
-    }, [_id]);
+    }, [id]);
 
 
     return (
         <div className="bg-2 section" id="contact">
             <div
-                className={`inner ${styles.myAccountBackground}`}
+                className={`inner ${styles.userAccountDetailsBackground}`}
                 data-topspace={50}
                 data-bottomspace={20}
                 data-image="./src/assets/flavours/bigsmokebbq/images/content/background-6.jpg"
@@ -43,7 +43,8 @@ export default function UserAccountDetails() {
                         <h4 className="hdr5">
                             <span>{user.email}</span>
                         </h4>
-                        <span className="accDetails">{user.email}</span>
+                        
+
                     </div>
                     {/* / easyBox */}
                 </div>
