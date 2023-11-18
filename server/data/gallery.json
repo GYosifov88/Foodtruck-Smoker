@@ -4,27 +4,31 @@
     "category": "Street-Life",
     "title": "Monday lunch",
     "place": "Pleven, Kaylaka",
-    "imageUrl": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_75,w_640,x_2460,y_2220/v1/clients/austin/Copy_of_Visit_Austin1031_7be55468-c263-4dec-8b3f-cc739096256a.jpg"
+    "imageUrl": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_75,w_640,x_2460,y_2220/v1/clients/austin/Copy_of_Visit_Austin1031_7be55468-c263-4dec-8b3f-cc739096256a.jpg",
+    "userId": "07f260f4-466c-4607-9a33-f7273b24f1b4"
   },
   "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
     "_id": "bdabf5e9-23be-40a1-9f14-9117b6702a9d",
     "category": "Kitchen-Life",
     "title": "Messy after brunch time",
     "place": "Varna, Wake Park",
-    "imageUrl": "https://mobile-cuisine.com/wp-content/uploads/2014/07/Working-in-a-food-truck.jpg"
+    "imageUrl": "https://mobile-cuisine.com/wp-content/uploads/2014/07/Working-in-a-food-truck.jpg",
+    "userId": "07f260f4-466c-4607-9a33-f7273b24f1b4"
   },
   "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f": {
     "_id": "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f",
     "category": "Events",
     "title": "Bacon day",
     "place": "Elena, city center",
-    "imageUrl": "https://d3hbe0kmbam4a5.cloudfront.net/photos/52fe4958-592f-43b9-8067-a04661b2fe80.jpeg"
+    "imageUrl": "https://d3hbe0kmbam4a5.cloudfront.net/photos/52fe4958-592f-43b9-8067-a04661b2fe80.jpeg",
+    "userId": "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f"
   },
   "7b3143e1-d6df-4e87-bd7e-5f8b03c2fd3f": {
     "_id": "7b3143e1-d6df-4e87-bd7e-5f8b03c2fd3f",
     "category": "Food",
     "title": "Our famous brisket",
     "place": "Kazanlak Rose festival",
-    "imageUrl": "https://images.squarespace-cdn.com/content/v1/54f8a037e4b0c85afe172d28/1570661203444-X3OME642UN7R3AVB7LGD/brisket.jpg"
+    "imageUrl": "https://images.squarespace-cdn.com/content/v1/54f8a037e4b0c85afe172d28/1570661203444-X3OME642UN7R3AVB7LGD/brisket.jpg",
+    "userId": "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f"
   }
 }
