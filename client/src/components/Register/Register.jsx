@@ -1,43 +1,22 @@
 import styles from './Register.module.css'
-import { useState } from "react";
-import * as userService from "../../services/userService";
-import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import AuthContext from "../../contexts/authContext";
+import useForm from "../../hooks/useForm";
+
+const RegisterFormKeys = {
+    Email: 'email',
+    Password: 'password',
+    ConfirmPassword: 'confirm-password',
+};
 
 export default function Register() {
-    const [users, setUsers] = useState([]);
-    const [usernameValue, setUsernameValue] = useState('');
-    const [passwordValue, setPasswordValue] = useState('');
-    const [emailValue, setEmailValue] = useState('');
+    const { registerSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
+        [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.Password]: '',
+        [RegisterFormKeys.ConfirmPassword]: '',
+    });
 
-    const navigate = useNavigate()
-
-    const usernameChangeHandler = (e) => {
-        setUsernameValue(e.target.value);
-    };
-
-    const passwordChangeHandler = (e) => {
-        setPasswordValue(e.target.value);
-    };
-
-    const emailChangeHandler = (e) => {
-        setEmailValue(e.target.value);
-    };
-
-    const userCreateHandler = async (e) => {
-        // Stop page from refreshing
-        e.preventDefault();
-
-        // Get data from form data
-        const data = Object.fromEntries(new FormData(e.currentTarget));
-
-        // Create new user at the server
-        const newUser = await userService.create(data);
-
-        // Add newly created user to the local state
-        setUsers(state => [...state, newUser]);
-
-        navigate("/myaccount")
-    };
     return (
         <div
             className={`inner ${styles.registerBackground}`}
@@ -49,7 +28,7 @@ export default function Register() {
                 <h3 className="hdr4">Register</h3>
                 <div className="easyBox full">
                     <h4 className="hdr5">
-                        <span>Do you have an account with us?</span>
+                        <span>Do not have an account with us?</span>
                     </h4>
                     <div className="row nomargin">
                         <div className="col-md-5">
@@ -63,22 +42,9 @@ export default function Register() {
                             /> */}
                             <form
                                 className="simpleForm"
-                                onSubmit={userCreateHandler}
+                                onSubmit={onSubmit}
                             >
-                                <fieldset>
-                                    <div className="form-group">
-                                        <label htmlFor="username">Username</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            name="username"
-                                            id="username"
-                                            placeholder="enter your name"
-                                            value={usernameValue}
-                                            onChange={usernameChangeHandler}
-                                        // onBlur={() => console.log('onBlur')}
-                                        />
-                                    </div>
+                                <fieldset>                                    
                                     <div className="form-group">
                                         <label htmlFor="email">E-mail address</label>
                                         <input
@@ -88,8 +54,8 @@ export default function Register() {
                                             className="form-control"
                                             name="email"
                                             placeholder="enter your e-mail address"
-                                            value={emailValue}
-                                            onChange={emailChangeHandler}
+                                            value={values[RegisterFormKeys.Email]}
+                                            onChange={onChange}
 
                                         />
                                     </div>
@@ -101,8 +67,21 @@ export default function Register() {
                                             name="password"
                                             id="password"
                                             placeholder="type your password"
-                                            value={passwordValue}
-                                            onChange={passwordChangeHandler}
+                                            value={values[RegisterFormKeys.Password]}
+                                            onChange={onChange}
+                                        />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="password">Confirm Password</label>
+                                        <input
+                                            type="password"
+                                            className="form-control"
+                                            name="confirm-password"
+                                            id="confirm-password"
+                                            placeholder="confirm your password"
+                                            value={values[RegisterFormKeys.ConfirmPassword]}
+                                            onChange={onChange}
                                         />
                                     </div>
 

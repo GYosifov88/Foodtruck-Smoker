@@ -1,39 +1,22 @@
-const baseUrl = 'http://localhost:3030/jsonstore/gallery';
+import * as request from "../lib/request";
 
-export const getAllPictures = async () => {
-    const response = await fetch(baseUrl);
-    const result = await response.json();
+const baseUrl = 'http://localhost:3030/data/gallery';
 
-    const data = Object.values(result);
 
-    return data;
-};
-
-export const getOnePic = async (picId) => {
-  const response = await fetch(`${baseUrl}/${picId}`);
-  const result = await response.json();
+export const getAll = async () => {
+  const result = await request.get(baseUrl);
 
   return result;
 };
 
-export const create = async (data) => {
-  const body = {
-      category: data.category,
-      title: data.title,
-      place: data.place,
-      imageUrl: data.imageUrl,
-  };
+export const getOne = async (photoId) => {
+  const result = await request.get(`${baseUrl}/${photoId}`, );
 
-  const response = await fetch(baseUrl, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-  })
+  return result;
+}
 
-  const result = await response.json();
-  console.log(result);
+export const create = async (photoData) => {
+  const result = await request.post(baseUrl, photoData);
 
   return result;
 };

@@ -1,21 +1,20 @@
 import styles from './Login.module.css'
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import useForm from "../../hooks/useForm";
+import AuthContext from "../../contexts/authContext";
+
+const LoginFormKyes = {
+    Email: 'email',
+    Password: 'password',
+};
 
 export default function Login() {
+    const { loginSubmitHandler } = useContext(AuthContext);
 
-    const [usernameValue, setUsernameValue] = useState('');
-    const [passwordValue, setPasswordValue] = useState('');
-
-    const navigate = useNavigate()
-
-    const usernameChangeHandler = (e) => {
-        setUsernameValue(e.target.value);
-    };
-
-    const passwordChangeHandler = (e) => {
-        setPasswordValue(e.target.value);
-    };
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+        [LoginFormKyes.Email]: '',
+        [LoginFormKyes.Password]: '',
+    });
 
     return (
         <div
@@ -42,19 +41,19 @@ export default function Login() {
                             /> */}
                             <form
                                 className="simpleForm"
-                            // onSubmit={userCreateHandler}
+                                onSubmit={onSubmit}
                             >
                                 <fieldset>
                                     <div className="form-group">
-                                        <label htmlFor="username">Username</label>
+                                        <label htmlFor="username">E-mail</label>
                                         <input
-                                            type="text"
+                                            type="email"
                                             className="form-control"
-                                            name="username"
-                                            id="username"
-                                            placeholder="enter your name"
-                                            value={usernameValue}
-                                            onChange={usernameChangeHandler}
+                                            name={LoginFormKyes.Email}
+                                            id="email"
+                                            placeholder="enter your e-mail"
+                                            value={values[LoginFormKyes.Email]}
+                                            onChange={onChange}
                                         // onBlur={() => console.log('onBlur')}
                                         />
                                     </div>
@@ -64,11 +63,11 @@ export default function Login() {
                                         <input
                                             type="password"
                                             className="form-control"
-                                            name="password"
+                                            name={LoginFormKyes.Password}
                                             id="password"
                                             placeholder="type your password"
-                                            value={passwordValue}
-                                            onChange={passwordChangeHandler}
+                                            value={values[LoginFormKyes.Password]}
+                                            onChange={onChange}
                                         />
                                     </div>
 

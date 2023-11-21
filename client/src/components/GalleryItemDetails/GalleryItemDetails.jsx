@@ -8,7 +8,7 @@ export default function GalleryItemDetails() {
     const { id } = useParams();
 
     useEffect(() => {
-        galleryService.getOnePic(id)
+        galleryService.getOne(id)
             .then(result => setPhoto(result));
     }, [id]);
 

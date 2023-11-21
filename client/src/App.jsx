@@ -1,7 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
-// import * as authService from './services/authService';
-// import AuthContext from './contexts/authContext';
+import * as authService from './services/authService';
+import AuthContext from './contexts/authContext';
 import Path from './paths';
 
 import Footer from "./components/Footer/Footer"
@@ -16,6 +17,7 @@ import GalleryItemDetails from './components/GalleryItemDetails/GalleryItemDetai
 import MyAccount from "./components/MyAccount/MyAccount"
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import Logout from './components/Logout/Logout';
 import NotFound from './components/NotFound/NotFound';
 import UserAccountDetails from "./components/UserAccountDetails/UserAccountDetails"
 
@@ -32,8 +34,51 @@ import UserAccountDetails from "./components/UserAccountDetails/UserAccountDetai
 // import './assets/less/variables.less'
 
 function App() {
+  const navigate = useNavigate();
+  const [auth, setAuth] = useState(() => {
+    localStorage.removeItem('accessToken');
+
+    return {};
+  });
+
+  const loginSubmitHandler = async (values) => {
+    const result = await authService.login(values.email, values.password);
+
+    setAuth(result);
+
+    localStorage.setItem('accessToken', result.accessToken);
+
+    navigate(Path.Home);
+  };
+
+  const registerSubmitHandler = async (values) => {
+    const result = await authService.register(values.email, values.password);
+
+    setAuth(result);
+
+    localStorage.setItem('accessToken', result.accessToken);
+
+    navigate(Path.Home);
+  };
+
+  const logoutHandler = () => {
+    setAuth({});
+
+    localStorage.removeItem('accessToken');
+  };
+
+  const values = {
+    loginSubmitHandler,
+    registerSubmitHandler,
+    logoutHandler,
+    username: auth.username || auth.email,
+    email: auth.email,
+    isAuthenticated: !!auth.accessToken,
+  };
+
   return (
-    <>
+    <AuthContext.Provider value={values}>
+
       <div id="ct_preloader" style={{ display: "none" }}></div>
 
       <Navigation />
@@ -56,8 +101,7 @@ function App() {
 
       <Footer />
 
-
-    </>
+    </AuthContext.Provider>
   )
 }
 

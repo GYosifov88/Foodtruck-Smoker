@@ -1,14 +1,21 @@
 import GalleryItem from '../GalleryItem/GalleryItem';
 import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import AuthContext from '../../contexts/authContext';
+import Path from '../../paths';
 import * as galleryService from "../../services/galleryService";
 import styles from './Gallery.module.css';
 import { Link } from 'react-router-dom';
 
 export default function Gallery() {
+    const {
+        isAuthenticated,
+        username,
+      } = useContext(AuthContext);
     const [pictures, setPictures] = useState([]);
 
     useEffect(() => {
-        galleryService.getAllPictures()
+        galleryService.getAll()
             .then(result => setPictures(result))
             .catch(err => console.log(err))
     }, []);
@@ -35,13 +42,14 @@ export default function Gallery() {
                     </div>                    
                     <h3 className="hdr2">Took a good shot of our truck?</h3>
                     <h4 className="hdr3">
-                        We would be very glad if you could upload your photos here!
+                        We would be very glad if you could upload your photos here! Need to log in to be able to upload photos.
                     </h4>
-                    <div id="form-actions" className={styles.uploadBtnDiv}>
-                        <button type="submit" className={styles.uploadBtn} ><Link to="/gallery/add">Upload</Link></button>
+                    {isAuthenticated && (
+                        <div id="form-actions" className={styles.uploadBtnDiv}>
+                        <button type="submit" className={styles.uploadBtn} ><Link to={Path.GalleryAdd}>Upload</Link></button>
                     </div>
-
-
+                    )}
+                    
                     {/* <h4 className="hdr3">Follow us on instagram!</h4>
                     <br />
                     <div className="text-center">
