@@ -6,3 +6,11 @@
     /* width: 100%;
     height: 100vh; */
 }
+
+.delBtn {
+    background-color: rgb(190, 73, 73);
+}
+
+.editBtn {
+    background-color: rgb(73, 190, 126);
+}
