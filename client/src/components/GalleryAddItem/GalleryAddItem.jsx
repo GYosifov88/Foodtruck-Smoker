@@ -35,10 +35,8 @@ export default function GalleryAddItem(){
         // Get data from form data
         const data = Object.fromEntries(new FormData(e.currentTarget));
 
-        // Create new user at the server
         const newPhoto = await galleryService.create(data);
 
-        // Add newly created user to the local state
         setPictures(state => [...state, newPhoto]);
 
         navigate("/gallery")
