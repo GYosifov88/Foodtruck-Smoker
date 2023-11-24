@@ -20,3 +20,9 @@ export const create = async (photoData) => {
 
   return result;
 };
+
+export const edit = async (photoId, photoData) => {
+  const result = await request.put(`${baseUrl}/${photoId}`, photoData);
+
+  return result;
+};

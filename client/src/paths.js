@@ -6,6 +6,7 @@ const Path = {
     Gallery: '/gallery',
     GalleryAdd: '/gallery/add',
     GalleryItemId: '/gallery/:id',
+    GalleryItemEdit: '/gallery/:id/edit',
     MyAccount: '/myaccount',
     Register: '/register',
     Login: '/login',

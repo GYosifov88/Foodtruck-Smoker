@@ -2,6 +2,7 @@ import styles from './Login.module.css'
 import { useContext } from "react";
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../contexts/authContext";
+import { useMemo } from 'react';
 
 const LoginFormKyes = {
     Email: 'email',
@@ -11,10 +12,12 @@ const LoginFormKyes = {
 export default function Login() {
     const { loginSubmitHandler } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
+    const initialValues = useMemo(() => ({
         [LoginFormKyes.Email]: '',
         [LoginFormKyes.Password]: '',
-    });
+    }), [])
+
+    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, initialValues);
 
     return (
         <div

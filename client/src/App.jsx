@@ -12,6 +12,7 @@ import Story from "./components/Story/Story"
 import Gallery from "./components/Gallery/Gallery"
 import GalleryAddItem from './components/GalleryAddItem/GalleryAddItem';
 import GalleryItemDetails from './components/GalleryItemDetails/GalleryItemDetails';
+import GalleryItemEdit from './components/GalleryItemEdit/GalleryItemEdit';
 import MyAccount from "./components/MyAccount/MyAccount"
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
@@ -37,6 +38,7 @@ function App() {
         <Route path={Path.Gallery} element={<Gallery />} />
         <Route path={Path.GalleryAdd} element={<GalleryAddItem />} />
         <Route path={Path.GalleryItemId} element={<GalleryItemDetails />} />
+        <Route path={Path.GalleryItemEdit} element={<GalleryItemEdit />} />
         <Route path={Path.MyAccount} element={<MyAccount />} />
         <Route path={Path.Register} element={<Register />} />
         <Route path={Path.Login} element={<Login />} />

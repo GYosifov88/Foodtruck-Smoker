@@ -1,9 +1,13 @@
-import styles from './GalleryItemDetails.module.css'
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+
+import AuthContext from "../../contexts/authContext";
 import * as galleryService from "../../services/galleryService";
 
+import styles from './GalleryItemDetails.module.css'
+
 export default function GalleryItemDetails() {
+    const { userId } = useContext(AuthContext);
     const [photo, setPhoto] = useState({});
     const { id } = useParams();
 
@@ -24,24 +28,25 @@ export default function GalleryItemDetails() {
                         <div className="row">
                             <div className="col-md-6">
                                 <p className="bigger">
-                                    <h3>Photo Title:</h3>
-                                    <input type="text" value={photo.title} disabled="true" />
+                                    Photo Title: {photo.title}
                                 </p>
                                 <p className="bigger">
-                                    <h3>Category:</h3>
-                                    <input type="text" value={photo.category} disabled="true" />
+                                    Category: {photo.category}
                                 </p>
                                 <p className="bigger">
-                                    <h3>Place:</h3>
-                                    <input type="text" value={photo.place} disabled="true" />
+                                    Place: {photo.place}
                                 </p>
-                                <p className="bigger">
-                                    <button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button>
-                                </p>
-                                <p className="bigger">
-                                    <button id="action-save" className={`btn ${styles.delBtn}`} type="submit">Delete</button>
-                                    
-                                </p>
+                                {userId === photo._ownerId && (
+                                    <>
+                                        <p className="bigger">
+                                            <Link to={`/gallery/${id}/edit`}><button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button></Link>
+                                        </p>
+                                        <p className="bigger">
+                                            <button id="action-save" className={`btn ${styles.delBtn}`} type="submit">Delete</button>
+                                        </p>
+                                    </>
+                                )}
+
                             </div>
                             <div className="col-md-6">
                                 <div className="polaroidSlider pull-right">
