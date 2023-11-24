@@ -36,6 +36,7 @@ export default function GalleryItemDetails() {
                                 <p className="bigger">
                                     Place: {photo.place}
                                 </p>
+
                                 {userId === photo._ownerId && (
                                     <>
                                         <p className="bigger">
@@ -57,8 +58,14 @@ export default function GalleryItemDetails() {
                                             alt={photo.title}
                                         />
                                     </div>
+
                                 </div>
+
                             </div>
+                            <Link to={'/gallery'}><button id="action-cancel" className="btn" type="button" >
+                                Cancel
+                            </button></Link>
+
                         </div>
                     </div>
                     {/* / easyBox */}

@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import AuthContext from '../../contexts/authContext';
 import * as authService from "../../services/authService"
 import styles from './MyAccount.module.css'
-import { Link } from 'react-router-dom';
+
 
 export default function MyAccount() {
     const [user, setUser] = useState({});
@@ -13,11 +13,13 @@ export default function MyAccount() {
         isAuthenticated,
         username,
         email,
+        userId,
+        userImage,
     } = useContext(AuthContext);
 
 
     useEffect(() => {
-        authService.getCurrentUser(id)
+        authService.getCurrentUser(userId)
             .then(result => setUser(result))
             .catch((err) => {
                 navigate('/');
@@ -43,8 +45,11 @@ export default function MyAccount() {
                                 <h4 className="hdr5">
                                     <span>Email: {email}</span>
                                 </h4>
+                                <h4 className="hdr5">
+                                    <span>Image: {userImage}</span>
+                                </h4>
                                 <p className="bigger">
-                                    <button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button>
+                                    <Link to={`/myaccount/edit`}><button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button></Link>
                                 </p>
                                 <p className="bigger">
                                     <button id="action-save" className={`btn ${styles.delBtn}`} type="submit">Delete</button>
