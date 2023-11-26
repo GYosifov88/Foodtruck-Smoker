@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3030/jsonstore/menu';
+const baseUrl = 'http://localhost:3030/data/menu';
 
 export const getAllBBQDishes = async () => {
     const response = await fetch(baseUrl);

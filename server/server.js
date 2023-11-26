@@ -1342,7 +1342,141 @@
     	sessions: {
     	}
     };
-    var seedData = {};
+    var seedData = {
+        gallery: {
+            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "category": "Street-Life",
+                "title": "Monday lunch",
+                "place": "Pleven, Kaylaka",
+                "imageUrl": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,g_xy_center,h_640,q_75,w_640,x_2460,y_2220/v1/clients/austin/Copy_of_Visit_Austin1031_7be55468-c263-4dec-8b3f-cc739096256a.jpg",
+              },
+              "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "category": "Kitchen-Life",
+                "title": "Messy after brunch time",
+                "place": "Varna, Wake Park",
+                "imageUrl": "https://mobile-cuisine.com/wp-content/uploads/2014/07/Working-in-a-food-truck.jpg",
+              },
+              "7w3143e1-d6df-4e67-bd7e-5f8b03f2fd3f": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "category": "Events",
+                "title": "Bacon day",
+                "place": "Elena, city center",
+                "imageUrl": "https://d3hbe0kmbam4a5.cloudfront.net/photos/52fe4958-592f-43b9-8067-a04661b2fe80.jpeg",
+              },
+              "7b3143e1-d6df-4e87-bd7e-5f8b03c2fd3f": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "category": "Food",
+                "title": "Our famous brisket",
+                "place": "Kazanlak Rose festival",
+                "imageUrl": "https://images.squarespace-cdn.com/content/v1/54f8a037e4b0c85afe172d28/1570661203444-X3OME642UN7R3AVB7LGD/brisket.jpg",
+              }
+        },
+        menu: {
+            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "BBQ Dish",
+                "title": "Pulled Pork",
+                "price": "17",
+                "description": "Slowly cooked pig neck with smoked paprika, oregano, black pepper, salt, brown sugar. Marinated for 24 hourse before gently smoked with apple wood.",
+                "imageUrl": "https://saltpepperskillet.com/wp-content/uploads/bbq-pulled-pork-on-a-sheet-pan-with-bbq-sauce-horizontal-1.jpg"
+              },
+              "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "Sides",
+                "title": "Garlic Bread",
+                "price": "3",
+                "description": "Homemade dough with yeast, baked and coated with virgin olive oil, salt and garlic.",
+                "imageUrl": "https://www.ambitiouskitchen.com/wp-content/uploads/2023/02/Garlic-Bread-4.jpg"
+              },
+              "2dagf5e9-29be-40a1-9f14-9127b6702c9d": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "Sides",
+                "title": "French Fries",
+                "price": "7",
+                "description": "Fresh pototaes, double fried with salt, smoked paprika and oregano or with samardala",
+                "imageUrl": "https://www.mirchitales.com/wp-content/uploads/2021/08/Masala-French-Fries-2.jpg"
+              },
+              "07f260f4-4b6c-4607-9a33-f7173b24c1b4": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "BBQ Dish",
+                "title": "Beef Brisket",
+                "price": "20",
+                "description": "Tender beef brisket seasoned only with black pepper, salt and brown sugar. Marinated for 24 hourse before gently smoked with oak wood.",
+                "imageUrl": "https://www.seriouseats.com/thmb/VCATVunIu0wGItf_tJ2toFhSzIU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__07__20160801-sous-vide-brisket-guide-35-63bbc7bc88e24f1789427ee9ff2728b3.jpg"
+              },
+              "97f261f4-4b2c-46t7-9a33-f7173q24c1b9": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "BBQ Dish",
+                "title": "Rib Eye Burger with homemade sauce",
+                "price": "16",
+                "description": "Classic beef rib eye burger slowly cooked seasoned nicely, with letuce, pickled onions, tomatoes, halapeno and our homemade sauce with smoked cheese.",
+                "imageUrl": "https://www.rachaelrayshow.com/sites/default/files/styles/1280x720/public/images/2019-01/ribeye-burger.jpg?h=d1cb525d&itok=EgulL1ze"
+              },
+              "r7f261f5-4b2c-41t7-9l33-f7113q24c7b9": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "BBQ Dish",
+                "title": "Pulled chicken",
+                "price": "14",
+                "description": "Marinated chicken breast and tights with mediteranean spices, gently smoked with light bbq sauce on the side",
+                "imageUrl": "https://www.bowlofdelicious.com/wp-content/uploads/2014/04/Smoky-Mexican-Pulled-Chicken-4.jpg"
+              },
+              "07f221f5-4v2c-41y9-9l33-f7213q2c4769": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "BBQ Dish",
+                "title": "Slow grilled pulled pork sandwich",
+                "price": "17",
+                "description": "Homemade chabata filled with our slowly smoked pulled pork, smoked cheese, homemade spicy salsa with tomatoes, chilli peppers, garlic, parsley and onion.",
+                "imageUrl": "https://amindfullmom.com/wp-content/uploads/2023/05/Pulled-Pork-Slow-Cooker.jpg"
+              },
+              "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "Beverages",
+                "title": "Craft Beer",
+                "price": "5",
+                "description":"Craft pale ale beer with citrus notes",
+                "imageUrl": "https://pivoteka.bg/images/thumbnails/400/400/detailed/6/Avren_Pale_Ale.jpg"
+              },
+              "8b3143e1-d6df-4a67-bd9e-5t8b03f2fd3f": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "category": "Beverages",
+                "title": "Water",
+                "price": "2",
+                "description":"Still water",
+                "imageUrl": "https://cdn.nokovandson.com/cropimg/560/610/products/xz/xzclgoz518.jpg"
+              }
+        },
+        events: {
+            "07f260f4-466c-4607-9a33-f7273b24f1b4": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "month": "SEP",
+                "date": "15",
+                "event": "Varna BBQ feast",
+                "place": "Varna Sea Garden, Food trailer park",
+                "time": "11:00 am",
+                "location": "43.21143794208958, 27.94837157598778"
+              },
+              "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
+                "_ownerid": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "month": "SEP",
+                "date": "31",
+                "event": "Veliko Tarnovo BBQ chalenge",
+                "place": "Veliko Tarnovo, Mini-Bulgaria Park",
+                "time": "12:00 pm",
+                "location": "43.080338383726044, 25.654202797291425"
+              },
+              "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f": {
+                "_ownerid": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "month": "DEC",
+                "date": "11",
+                "event": "Rose Valey Grill fest",
+                "place": "Kazanlak, Kolodrum Park",
+                "time": "12:00 pm",
+                "location": "42.630858768093425, 25.389437439573022"    
+              }
+        }
+    };
     var rules$1 = {
     	users: {
     		".create": false,

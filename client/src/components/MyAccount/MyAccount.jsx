@@ -19,16 +19,19 @@ export default function MyAccount() {
 
 
     useEffect(() => {
-        authService.getCurrentUser(userId)
+        if (userId) {
+            authService.getCurrentUser(userId)
             .then(result => setUser(result))
             .catch((err) => {
                 navigate('/');
             });
-    }, [id]);
+        }
+        
+    }, [id, userId]);
 
     return (
         <>
-            {isAuthenticated && (
+            {isAuthenticated && userId && (
                 <div className="bg-2 section" id="contact">
                     <div
                         className={`inner ${styles.userAccountDetailsBackground}`}
