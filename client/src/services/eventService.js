@@ -1,3 +1,4 @@
+import * as request from '../lib/request';
 const baseUrl = 'http://localhost:3030/data/events';
 
 export const getAll = async () => {
@@ -8,3 +9,9 @@ export const getAll = async () => {
 
     return data;
 };
+
+export const getOne = async (eventId) => {
+    const result = await request.get(`${baseUrl}/${eventId}`, );
+  
+    return result;
+  }

@@ -1,0 +1,41 @@
+.eventBackground {
+    background-image: url('./background-3.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* width: 100%;
+    height: 100vh; */
+}
+
+.commentSection{
+    color: black
+}
+
+.commentSection h2 {
+    color: black
+}
+
+.commentSection ul {
+    list-style: none;
+    color: black;
+}
+
+.commentSection ul li p{
+    color: black;
+}
+
+.commentSection p {
+    color: black;
+}
+
+.commentBox {
+    border: 2px solid #ccc;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.commentParagraph {
+    margin-top: 5px; /* Add some top margin between email and text */
+    
+}

@@ -19,3 +19,6 @@ const GalleryItem = ({
 }
 
 export default GalleryItem;
+
+
+

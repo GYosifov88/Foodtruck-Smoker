@@ -49,6 +49,8 @@ export default function GalleryItemDetails() {
                                 )}
 
                             </div>
+
+
                             <div className="col-md-6">
                                 <div className="polaroidSlider pull-right">
 
@@ -58,13 +60,13 @@ export default function GalleryItemDetails() {
                                             alt={photo.title}
                                         />
                                     </div>
-
                                 </div>
-
                             </div>
+                            
                             <Link to={'/gallery'}><button id="action-cancel" className="btn" type="button" >
                                 Cancel
-                            </button></Link>
+                            </button>
+                            </Link>
 
                         </div>
                     </div>

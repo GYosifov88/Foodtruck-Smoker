@@ -2,6 +2,7 @@ const Path = {
     Home: '/',
     Menu: '/menu',
     Events: '/events',
+    EventDetails: '/events/:id',
     Story: '/story',
     Gallery: '/gallery',
     GalleryAdd: '/gallery/add',

@@ -20,6 +20,7 @@ import Login from './components/Login/Login';
 import Logout from './components/Logout/Logout';
 import NotFound from './components/NotFound/NotFound';
 import UserAccountDetails from "./components/UserAccountDetails/UserAccountDetails"
+import EventDetails from './components/EventDetails/EventDetails';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path={Path.Home} element={<Recommendations />} />
         <Route path={Path.Menu} element={<Menu />} />
         <Route path={Path.Events} element={<Events />} />
+        <Route path={Path.EventDetails} element={<EventDetails />} />
         <Route path={Path.Story} element={<Story />} />
         <Route path={Path.Gallery} element={<Gallery />} />
         <Route path={Path.GalleryAdd} element={<GalleryAddItem />} />
