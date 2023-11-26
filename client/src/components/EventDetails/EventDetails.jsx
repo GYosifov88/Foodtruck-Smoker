@@ -84,22 +84,22 @@ export default function EventDetails() {
                         </div>
                         <div className="clearfix" />
                         {isAuthenticated && (
-                        <div className="form-group">
-                            <article >
-                                {/* <label >Add new comment:</label> */}
-                                <form className="simpleForm" onSubmit={onSubmit} >
-                                    <textarea className="form-control" value={values.comment} onChange={onChange} name="comment" placeholder="Comment......"></textarea>
-                                    <input className="btn submit" type="submit" value="Add Comment" />
-                                </form>
-                            </article>
-                            
-                        </div>
+                            <div className="form-group">
+                                <article >
+                                    {/* <label >Add new comment:</label> */}
+                                    <form className="simpleForm" onSubmit={onSubmit} >
+                                        <textarea className="form-control" value={values.comment} onChange={onChange} name="comment" placeholder="Comment......"></textarea>
+                                        <input className="btn submit" type="submit" value="Add Comment" />
+                                    </form>
+                                </article>
+
+                            </div>
                         )}
                         <Link to={'/events'}><button id="action-cancel" className="btn" type="button" >
-                                Cancel
-                            </button>
-                            </Link>
-                        
+                            Cancel
+                        </button>
+                        </Link>
+
                     </div>
 
                     <h3 className="hdr2">Join us at our events</h3>
