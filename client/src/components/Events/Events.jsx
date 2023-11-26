@@ -1,7 +1,7 @@
 import styles from './Events.module.css'
 import { useState, useEffect } from "react";
 import * as eventService from "../../services/eventService";
-import EventItem from "./EventItem"
+import EventItem from "../EventItem/EventItem"
 
 
 export default function Events() {

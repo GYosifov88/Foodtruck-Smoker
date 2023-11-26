@@ -1,24 +1,56 @@
 import styles from './Register.module.css'
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useState, useEffect } from "react";
 import AuthContext from "../../contexts/authContext";
 import useForm from "../../hooks/useForm";
 
 const RegisterFormKeys = {
     Email: 'email',
+    Username: 'username',
     Password: 'password',
-    ConfirmPassword: 'confirm-password',
+    ConfirmPassword: 'confirm_password',
 };
 
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
 
+    // const [passwordError, setPasswordError] = useState('');
+
     const initialValues = useMemo(() => ({
         [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
     }), [])
+    const validatePasswords = (values) => {
+        const errors = {};
 
-    const { values, onChange, onSubmit } = useForm(registerSubmitHandler, initialValues);
+        if (values[RegisterFormKeys.Password] !== values[RegisterFormKeys.ConfirmPassword]) {
+            errors[RegisterFormKeys.Password] = "Passwords don't match";
+            errors[RegisterFormKeys.ConfirmPassword] = "Passwords don't match";
+        }
+
+        return errors;
+    };
+    // const validatePasswords = () => {
+    //     if (values[RegisterFormKeys.Password] !== values[RegisterFormKeys.ConfirmPassword]) {
+    //         setPasswordError("Passwords don't match");
+    //         return false;
+    //     }
+    //     setPasswordError('');
+    //     return true;
+    // };
+
+    // const { values, onChange, onSubmit } = useForm(
+    //     () => {
+    //         // Validate passwords before submitting
+    //         if (validatePasswords()) {
+    //             registerSubmitHandler();
+    //         }
+    //     },
+    //     initialValues
+    // );
+    
+    const { values, errors, onChange, onSubmit, setErrors} = useForm(registerSubmitHandler, initialValues, validatePasswords);
 
     return (
         <div
@@ -35,14 +67,9 @@ export default function Register() {
                     </h4>
                     <div className="row nomargin">
                         <div className="col-md-5">
-                            {/* <h4 className="hdr2 special">Not registered yet? If you want to be up to date with us you can register here.</h4> */}
+                            
                             <input type="hidden" name="field_[]" defaultValue=" " />
-                            {/* <input
-                                className="btn btn-default"
-                                type="submit    "
-                                defaultValue="Register"
-                                onClick={createUserClickHandler}
-                            /> */}
+
                             <form
                                 className="simpleForm"
                                 onSubmit={onSubmit}
@@ -59,7 +86,19 @@ export default function Register() {
                                             placeholder="enter your e-mail address"
                                             value={values[RegisterFormKeys.Email]}
                                             onChange={onChange}
-
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="username">Username</label>
+                                        <input
+                                            type="username"
+                                            required=""
+                                            id="username"
+                                            className="form-control"
+                                            name="username"
+                                            placeholder="enter your username"
+                                            value={values[RegisterFormKeys.Username]}
+                                            onChange={onChange}
                                         />
                                     </div>
                                     <div className="form-group">
@@ -72,7 +111,7 @@ export default function Register() {
                                             placeholder="type your password"
                                             value={values[RegisterFormKeys.Password]}
                                             onChange={onChange}
-                                        />
+                                        />                                        
                                     </div>
 
                                     <div className="form-group">
@@ -80,12 +119,15 @@ export default function Register() {
                                         <input
                                             type="password"
                                             className="form-control"
-                                            name="confirm-password"
-                                            id="confirm-password"
+                                            name="confirm_password"
+                                            id="confirm_password"
                                             placeholder="confirm your password"
                                             value={values[RegisterFormKeys.ConfirmPassword]}
                                             onChange={onChange}
                                         />
+                                        {errors[RegisterFormKeys.ConfirmPassword] && (
+                                            <p className={`errorMsg ${styles.errorText}`}>{errors[RegisterFormKeys.ConfirmPassword]}</p>
+                                        )}
                                     </div>
 
                                     <div id="form-actions">

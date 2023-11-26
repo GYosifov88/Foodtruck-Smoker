@@ -9,8 +9,13 @@ import useForm from '../../hooks/useForm';
 
 import styles from './EventDetails.module.css';
 
+const CommentFormKeys = {
+    Comment: 'comment',
+
+};
+
 export default function EventDetails() {
-    const { email, userId, isAuthenticated } = useContext(AuthContext);
+    const { email, username, userId, isAuthenticated } = useContext(AuthContext);
     const [event, setEvent] = useState({});
     const [comments, dispatch] = useReducer(reducer, []);
     const { id } = useParams();
@@ -34,19 +39,36 @@ export default function EventDetails() {
             values.comment
         );
 
-        newComment.owner = { email };
+        newComment.owner = { username };
 
         dispatch({
             type: 'ADD_COMMENT',
             payload: newComment
         })
+
+        setErrors({}); // Clear any previous errors
+        setValues({
+            ...values,
+            [CommentFormKeys.Comment]: '',
+        });
+
     }
 
     const initialValues = useMemo(() => ({
-        comment: '',
+        [CommentFormKeys.Comment]: '',
     }), [])
 
-    const { values, onChange, onSubmit } = useForm(addCommentHandler, initialValues);
+    const validateComment = (values) => {
+        const errors = {};
+
+        if (values[CommentFormKeys.Comment].length === 0) {
+            errors[CommentFormKeys.Comment] = "Please add a comment";
+        }
+
+        return errors;
+    };
+
+    const { values, errors, onChange, onSubmit, setErrors, setValues } = useForm(addCommentHandler, initialValues, validateComment);
 
     return (
         <div className="bg-1 section" id="events">
@@ -88,7 +110,10 @@ export default function EventDetails() {
                                 <article >
                                     {/* <label >Add new comment:</label> */}
                                     <form className="simpleForm" onSubmit={onSubmit} >
-                                        <textarea className="form-control" value={values.comment} onChange={onChange} name="comment" placeholder="Comment......"></textarea>
+                                        <textarea className="form-control" value={values[CommentFormKeys.Comment]} onChange={onChange} name="comment" placeholder="Comment......"></textarea>
+                                        {errors[CommentFormKeys.Comment] && (
+                                            <p className={`errorMsg ${styles.errorText}`}>{errors[CommentFormKeys.Comment]}</p>
+                                        )}
                                         <input className="btn submit" type="submit" value="Add Comment" />
                                     </form>
                                 </article>

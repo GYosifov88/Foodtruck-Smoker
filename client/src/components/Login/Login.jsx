@@ -1,23 +1,48 @@
 import styles from './Login.module.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../contexts/authContext";
 import { useMemo } from 'react';
 
-const LoginFormKyes = {
+const LoginFormKeys = {
     Email: 'email',
     Password: 'password',
 };
 
 export default function Login() {
     const { loginSubmitHandler } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
     const initialValues = useMemo(() => ({
-        [LoginFormKyes.Email]: '',
-        [LoginFormKyes.Password]: '',
+        [LoginFormKeys.Email]: '',
+        [LoginFormKeys.Password]: '',
     }), [])
 
-    const { values, onChange, onSubmit } = useForm(loginSubmitHandler, initialValues);
+    const validateLogin = (values) => {
+        const errors = {};
+
+        // Example: Check if the email is not empty
+        if (!values[LoginFormKeys.Email]) {
+            errors[LoginFormKeys.Email] = 'Email is required';
+        }
+
+        // Example: Check if the password is not empty
+        if (!values[LoginFormKeys.Password]) {
+            errors[LoginFormKeys.Password] = 'Password is required';
+        }
+
+        return errors;
+    };
+
+    const { values, errors, onChange, onSubmit, setErrors } = useForm(
+        async (values) => {
+            try {
+                await loginSubmitHandler(values);
+            } catch (error) {
+                console.error('Login failed:', error);
+                setError(error.message);                
+            }
+        }, initialValues, validateLogin);
 
     return (
         <div
@@ -52,13 +77,16 @@ export default function Login() {
                                         <input
                                             type="email"
                                             className="form-control"
-                                            name={LoginFormKyes.Email}
+                                            name={LoginFormKeys.Email}
                                             id="email"
                                             placeholder="enter your e-mail"
-                                            value={values[LoginFormKyes.Email]}
+                                            value={values[LoginFormKeys.Email]}
                                             onChange={onChange}
                                         // onBlur={() => console.log('onBlur')}
                                         />
+                                        {errors[LoginFormKeys.Email] && (
+                                            <p className="errorMsg">{errors[LoginFormKeys.Email]}</p>
+                                        )}
                                     </div>
 
                                     <div className="form-group">
@@ -66,18 +94,25 @@ export default function Login() {
                                         <input
                                             type="password"
                                             className="form-control"
-                                            name={LoginFormKyes.Password}
+                                            name={LoginFormKeys.Password}
                                             id="password"
                                             placeholder="type your password"
-                                            value={values[LoginFormKyes.Password]}
+                                            value={values[LoginFormKeys.Password]}
                                             onChange={onChange}
                                         />
+                                        {errors[LoginFormKeys.Password] && (
+                                            <p className="errorMsg">{errors[LoginFormKeys.Password]}</p>
+                                        )}
                                     </div>
 
                                     <div id="form-actions">
                                         <button id="action-save" className="btn btn-default" type="submit">Login</button>
-
+                                        
                                     </div>
+                                    {error && (
+                                            <p className="errorMsg">{error}</p>
+                                        )}
+
                                 </fieldset>
                             </form>
                         </div>

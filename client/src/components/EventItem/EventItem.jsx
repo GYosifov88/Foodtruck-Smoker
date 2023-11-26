@@ -5,9 +5,6 @@ const EventItem = ({
   month,
   date,
   event,
-  place,
-  time,
-  location,
 }) => {
 
   
