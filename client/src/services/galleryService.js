@@ -26,3 +26,5 @@ export const edit = async (photoId, photoData) => {
 
   return result;
 };
+
+export const remove = async (photoId) => request.remove(`${baseUrl}/${photoId}`);
