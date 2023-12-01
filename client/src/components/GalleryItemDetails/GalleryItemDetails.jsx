@@ -50,7 +50,7 @@ export default function GalleryItemDetails() {
                                 {userId === photo._ownerId && (
                                     <>
                                         <p className="bigger">
-                                            <Link to={`/gallery/${id}/edit`}><button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button></Link>
+                                            <Link to={`${Path.Gallery}/${id}/edit`}><button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button></Link>
                                         </p>
                                         <p className="bigger">
                                             <button id="action-save" className={`btn ${styles.delBtn}`} onClick={deleteButtonClickHandler} type="submit">Delete</button>
@@ -73,7 +73,7 @@ export default function GalleryItemDetails() {
                                 </div>
                             </div>
                             
-                            <Link to={'/gallery'}><button id="action-cancel" className="btn" type="button" >
+                            <Link to={Path.Gallery}><button id="action-cancel" className="btn" type="button" >
                                 Cancel
                             </button>
                             </Link>

@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 import * as eventService from '../../services/eventService';
 import * as commentService from '../../services/commentService';
+import Path from '../../paths';
 import AuthContext from "../../contexts/authContext";
 import reducer from './commentReducer';
 import useForm from '../../hooks/useForm';
@@ -120,7 +121,7 @@ export default function EventDetails() {
 
                             </div>
                         )}
-                        <Link to={'/events'}><button id="action-cancel" className="btn" type="button" >
+                        <Link to={Path.Events}><button id="action-cancel" className="btn" type="button" >
                             Cancel
                         </button>
                         </Link>

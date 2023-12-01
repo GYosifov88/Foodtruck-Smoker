@@ -1,4 +1,4 @@
-import styles from './Recommendations.module.css'
+import styles from './Home.module.css'
 
 export default function Recommendations() {
     return (
@@ -25,23 +25,11 @@ export default function Recommendations() {
                     <div className="col-md-4 col-sm-4">
                         <div className="home full-width-photo">
                             <h3 id='headtext' className="big">Meet the first smoker food truck in Bulgaria. We are two very passionate smoking meat enthusiasts. Come and meet us and enjoy the rich tense flavour of smoked meat.</h3>
-                            {/* <div className="tweets">
-                                <div>
-                                    <p>daskjdghbasdjkgasjkdih</p>
-                                </div>
-                            </div> */}
+
                         </div>
                     </div>
                 </div>
-                {/* <div className="container">
-                    <div className="text-center">
-                        <div className='home full-width-photo'>
-                            <h4>We are the first Food truck with smoked meat</h4>
-                            <img className='homepic' src="./src/assets/food_images/brisket-flat-mk4-signals-38-of-47.jpg" alt="" />
-                        </div>
-
-                    </div>
-                </div> */}
+                
                 <div className="container">
                     <div className="text-center">
                         <img
@@ -72,7 +60,7 @@ export default function Recommendations() {
                                     
                                 </div>
                             </div>
-                            {/* / prodBox */}
+                            
                         </div>
                         <div className="col-md-4 col-sm-6">
                             <div className="prodBox type2">
@@ -93,7 +81,7 @@ export default function Recommendations() {
                                     </span>
                                 </div>
                             </div>
-                            {/* / prodBox */}
+                            
                         </div>
                         <div className="clearfix visible-sm" />
                         <div className="col-md-4 col-sm-12">
@@ -115,10 +103,10 @@ export default function Recommendations() {
                                     </span>
                                 </div>
                             </div>
-                            {/* / prodBox */}
+                            
                         </div>
                     </div>
-                    {/* / row */}
+                    
                     <h3 className="hdr2">Whatever you choose</h3>
                     <h4 className="hdr3">
                         Be 100% sure, that our Food is entirely made of biological ingredients

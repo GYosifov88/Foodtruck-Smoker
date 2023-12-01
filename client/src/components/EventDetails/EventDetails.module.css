@@ -18,6 +18,11 @@
 .commentSection ul {
     list-style: none;
     color: black;
+    margin-left: 30px;
+}
+
+.commentSection ul li{
+    width: 90%;
 }
 
 .commentSection ul li p{

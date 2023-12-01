@@ -1670,7 +1670,7 @@ li.dropdown:hover .dropdown-menu {
   background-color: transparent;
 }
 .roundedImg img {
-  opacity: 0;
+  border-radius: 10px;
   filter: alpha(opacity=0);
 }
 /* eventBox */

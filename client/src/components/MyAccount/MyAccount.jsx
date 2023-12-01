@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import AuthContext from '../../contexts/authContext';
 import * as authService from "../../services/authService"
+import Path from '../../paths';
 import styles from './MyAccount.module.css'
 
 
@@ -23,7 +24,7 @@ export default function MyAccount() {
             authService.getCurrentUser(userId)
             .then(result => setUser(result))
             .catch((err) => {
-                navigate('/');
+                navigate(`${Path.Home}`);
             });
         }
         
@@ -52,7 +53,7 @@ export default function MyAccount() {
                                     <span>Image: {userImage}</span>
                                 </h4>
                                 <p className="bigger">
-                                    <Link to={`/myaccount/edit`}><button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button></Link>
+                                    <Link to={Path.MyAccountEdit}><button id="action-save" className={`btn ${styles.editBtn}`} type="submit">Edit</button></Link>
                                 </p>
                                 <p className="bigger">
                                     <button id="action-save" className={`btn ${styles.delBtn}`} type="submit">Delete</button>
@@ -60,7 +61,7 @@ export default function MyAccount() {
                                 </p>
 
                             </div>
-                            {/* / easyBox */}
+                            
                         </div>
                     </div>
                 </div>
@@ -84,7 +85,7 @@ export default function MyAccount() {
                                     <div className="col-md-5">
                                         <h4 className="hdr2 special">Not registered yet? If you want to be up to date with us you can register here.</h4>
                                         <input type="hidden" name="field_[]" defaultValue=" " />
-                                        <button type="submit" className="btn btn-default" ><Link to="/register">Register</Link></button>
+                                        <button type="submit" className="btn btn-default" ><Link to={Path.Register}>Register</Link></button>
 
                                     </div>
                                     <div className="col-md-2"></div>
@@ -92,12 +93,12 @@ export default function MyAccount() {
                                         <h4 className="hdr2 special">Already have an account? Please login to proceed!</h4>
 
 
-                                        <button className="btn btn-default" type="button"><Link to="/login">Login</Link></button>
+                                        <button className="btn btn-default" type="button"><Link to={Path.Login}>Login</Link></button>
 
                                     </div>
                                 </div>
                             </div>
-                            {/* / easyBox */}
+                            
                         </div>
                     </div>
                 </div>

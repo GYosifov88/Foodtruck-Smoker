@@ -1,7 +1,10 @@
 import styles from './Register.module.css'
-import { useContext, useMemo, useState, useEffect } from "react";
+import { useContext, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
 import useForm from "../../hooks/useForm";
+import Path from '../../paths';
+
 
 const RegisterFormKeys = {
     Email: 'email',
@@ -12,15 +15,14 @@ const RegisterFormKeys = {
 
 export default function Register() {
     const { registerSubmitHandler } = useContext(AuthContext);
-
-    // const [passwordError, setPasswordError] = useState('');
-
+    const [error, setError] = useState('');
     const initialValues = useMemo(() => ({
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
     }), [])
+
     const validatePasswords = (values) => {
         const errors = {};
 
@@ -31,26 +33,17 @@ export default function Register() {
 
         return errors;
     };
-    // const validatePasswords = () => {
-    //     if (values[RegisterFormKeys.Password] !== values[RegisterFormKeys.ConfirmPassword]) {
-    //         setPasswordError("Passwords don't match");
-    //         return false;
-    //     }
-    //     setPasswordError('');
-    //     return true;
-    // };
 
-    // const { values, onChange, onSubmit } = useForm(
-    //     () => {
-    //         // Validate passwords before submitting
-    //         if (validatePasswords()) {
-    //             registerSubmitHandler();
-    //         }
-    //     },
-    //     initialValues
-    // );
-    
-    const { values, errors, onChange, onSubmit, setErrors} = useForm(registerSubmitHandler, initialValues, validatePasswords);
+    const { values, errors, onChange, onSubmit } = useForm(
+        async (values) => {
+            try {
+                await registerSubmitHandler(values);
+            } catch (error) {
+                console.error('Register failed:', error);
+                setError(error.message);
+            }
+        },      
+        initialValues, validatePasswords);
 
     return (
         <div
@@ -67,19 +60,19 @@ export default function Register() {
                     </h4>
                     <div className="row nomargin">
                         <div className="col-md-5">
-                            
+
                             <input type="hidden" name="field_[]" defaultValue=" " />
 
                             <form
                                 className="simpleForm"
                                 onSubmit={onSubmit}
                             >
-                                <fieldset>                                    
+                                <fieldset>
                                     <div className="form-group">
                                         <label htmlFor="email">E-mail address</label>
                                         <input
                                             type="email"
-                                            required=""
+                                            required="true"
                                             id="email"
                                             className="form-control"
                                             name="email"
@@ -92,7 +85,7 @@ export default function Register() {
                                         <label htmlFor="username">Username</label>
                                         <input
                                             type="username"
-                                            required=""
+                                            required="true"
                                             id="username"
                                             className="form-control"
                                             name="username"
@@ -111,7 +104,7 @@ export default function Register() {
                                             placeholder="type your password"
                                             value={values[RegisterFormKeys.Password]}
                                             onChange={onChange}
-                                        />                                        
+                                        />
                                     </div>
 
                                     <div className="form-group">
@@ -132,10 +125,14 @@ export default function Register() {
 
                                     <div id="form-actions">
                                         <button id="action-save" className="btn btn-default" type="submit">Register</button>
-                                        {/* <button id="action-cancel" className="btn" type="button" onClick={onClose}>
+                                        <Link to={Path.Home}><button id="action-cancel" className="btn" type="button" >
                                             Cancel
-                                        </button> */}
+                                        </button>
+                                        </Link>
                                     </div>
+                                    {error && (
+                                            <p className="errorMsg">{error}</p>
+                                        )}
                                 </fieldset>
                             </form>
                         </div>

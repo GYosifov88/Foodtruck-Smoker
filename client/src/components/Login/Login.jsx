@@ -34,7 +34,7 @@ export default function Login() {
         return errors;
     };
 
-    const { values, errors, onChange, onSubmit, setErrors } = useForm(
+    const { values, errors, onChange, onSubmit } = useForm(
         async (values) => {
             try {
                 await loginSubmitHandler(values);
@@ -43,7 +43,7 @@ export default function Login() {
                 setError(error.message);                
             }
         }, initialValues, validateLogin);
-
+    
     return (
         <div
             className={`inner ${styles.loginBackground}`}
@@ -58,15 +58,8 @@ export default function Login() {
                         <span>Do you have an account with us?</span>
                     </h4>
                     <div className="row nomargin">
-                        <div className="col-md-5">
-                            {/* <h4 className="hdr2 special">Not registered yet? If you want to be up to date with us you can register here.</h4> */}
-                            <input type="hidden" name="field_[]" defaultValue=" " />
-                            {/* <input
-                                className="btn btn-default"
-                                type="submit    "
-                                defaultValue="Register"
-                                onClick={createUserClickHandler}
-                            /> */}
+                        <div className="col-md-5">                            
+                            <input type="hidden" name="field_[]" defaultValue=" " />      
                             <form
                                 className="simpleForm"
                                 onSubmit={onSubmit}
@@ -82,7 +75,7 @@ export default function Login() {
                                             placeholder="enter your e-mail"
                                             value={values[LoginFormKeys.Email]}
                                             onChange={onChange}
-                                        // onBlur={() => console.log('onBlur')}
+                                        
                                         />
                                         {errors[LoginFormKeys.Email] && (
                                             <p className="errorMsg">{errors[LoginFormKeys.Email]}</p>
@@ -117,8 +110,7 @@ export default function Login() {
                             </form>
                         </div>
                     </div>
-                </div>
-                {/* / easyBox */}
+                </div>               
             </div>
         </div>
     )

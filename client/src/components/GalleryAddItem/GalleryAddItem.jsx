@@ -1,9 +1,10 @@
 import styles from './GalleryAddItem.module.css'
 import { useState } from "react";
 import * as galleryService from "../../services/galleryService";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import Path from '../../paths';
 
-export default function GalleryAddItem(){
+export default function GalleryAddItem() {
     const [pictures, setPictures] = useState([]);
     const [categoryValue, setCategoryValue] = useState('');
     const [titleValue, setTitleValue] = useState('');
@@ -39,7 +40,7 @@ export default function GalleryAddItem(){
 
         setPictures(state => [...state, newPhoto]);
 
-        navigate("/gallery")
+        navigate(`${Path.Gallery}`)
     }
     return (
         <div
@@ -56,14 +57,7 @@ export default function GalleryAddItem(){
                     </h4>
                     <div className="row nomargin">
                         <div className="col-md-5">
-                            {/* <h4 className="hdr2 special">Not registered yet? If you want to be up to date with us you can register here.</h4> */}
                             <input type="hidden" name="field_[]" defaultValue=" " />
-                            {/* <input
-                                className="btn btn-default"
-                                type="submit    "
-                                defaultValue="Register"
-                                onClick={createUserClickHandler}
-                            /> */}
                             <form
                                 className="simpleForm"
                                 onSubmit={PhotoAddHandler}
@@ -79,28 +73,27 @@ export default function GalleryAddItem(){
                                             placeholder="enter the title"
                                             value={titleValue}
                                             onChange={titleChangeHandler}
-                                        // onBlur={() => console.log('onBlur')}
                                         />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="category">Category</label>
-                                        <select 
-                                        type='select'
-                                        name="category" 
-                                        id="category"
-                                        className="form-control"
-                                        placeholder="select category"
-                                        value={categoryValue}
-                                        onChange={categoryChangeHandler}
+                                        <select
+                                            type='select'
+                                            name="category"
+                                            id="category"
+                                            className="form-control"
+                                            placeholder="select category"
+                                            value={categoryValue}
+                                            onChange={categoryChangeHandler}
                                         >
                                             <option value="Kitchen-Life">Kitchen-Life</option>
                                             <option value="Street-Life">Street-Life</option>
                                             <option value="Events">Events</option>
                                             <option value="Food">Food</option>
-                                        </select>                                       
+                                        </select>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="place">Place</label>                                        
+                                        <label htmlFor="place">Place</label>
                                         <input
                                             type="text"
                                             className="form-control"
@@ -112,23 +105,24 @@ export default function GalleryAddItem(){
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="imageUrl">Image</label>                                        
+                                        <label htmlFor="imageUrl">Image</label>
                                         <input
                                             type="text"
                                             className="form-control"
                                             name="imageUrl"
                                             id="imageUrl"
                                             placeholder="add your picture"
-                                            value={imageUrlValue}   
+                                            value={imageUrlValue}
                                             onChange={imageUrlChangeHandler}
                                         />
                                     </div>
 
                                     <div id="form-actions">
                                         <button id="action-save" className="btn btn-default" type="submit">Add</button>
-                                        {/* <button id="action-cancel" className="btn" type="button" onClick={onClose}>
+                                        <Link to={Path.Gallery}><button id="action-cancel" className="btn" type="button" >
                                             Cancel
-                                        </button> */}
+                                        </button>
+                                        </Link>
                                     </div>
                                 </fieldset>
                             </form>

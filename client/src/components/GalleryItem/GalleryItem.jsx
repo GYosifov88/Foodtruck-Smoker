@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import Path from '../../paths';
 
 const GalleryItem = ({
     picId,
@@ -12,7 +13,7 @@ const GalleryItem = ({
             <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <Button as={Link} to={`/gallery/${picId}`} variant="primary">Details</Button>
+                <Button as={Link} to={`${Path.Gallery}/${picId}`} variant="primary">Details</Button>
             </Card.Body>
         </Card>
     );

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Path from '../../paths';
 
 const EventItem = ({
   eventId,
@@ -18,7 +19,7 @@ const EventItem = ({
       </h4>
       <hr />
       <div className="clearfix" />         
-      <button className="btn submit" type="submit" ><Link to={`/events/${eventId}`}>Details</Link></button>
+      <button className="btn submit" type="submit" ><Link to={`${Path.Events}/${eventId}`}>Details</Link></button>
     </div>
   )
 }

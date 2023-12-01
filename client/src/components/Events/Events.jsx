@@ -41,7 +41,6 @@ export default function Events() {
             We would be more than glad, to see you at our events!
           </h4>
         </div>
-        {/* / container */}
       </div>
     </div>
 

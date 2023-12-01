@@ -1,6 +1,7 @@
 import styles from './GalleryItemEdit.module.css'
 import { useState, useEffect } from "react";
 import * as galleryService from "../../services/galleryService";
+import Path from '../../paths';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 
@@ -25,7 +26,7 @@ export default function GalleryEditItem() {
         try {
             await galleryService.edit(id, values);
 
-            navigate('/gallery');
+            navigate(`${Path.Gallery}`);
         } catch (err) {
 
             console.log(err);
@@ -113,7 +114,7 @@ export default function GalleryEditItem() {
 
                                     <div id="form-actions">
                                         <button id="action-save" className="btn btn-default" type="submit">Edit</button>
-                                        <Link to={`/gallery/${id}`}><button id="action-cancel" className="btn" type="button" >
+                                        <Link to={`${Path.Gallery}/${id}`}><button id="action-cancel" className="btn" type="button" >
                                             Cancel
                                         </button></Link>
                                     </div>

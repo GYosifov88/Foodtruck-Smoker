@@ -34,9 +34,9 @@ export default function Navigation() {
                   Foodtruck - Big Smoke BBQ
                 </p>
               </div>
-              <a
+              <Link
                 className="navbar-brand"
-                href="/"
+                to={Path.Home}
                 data-width={282}
                 data-top={40}
                 style={{
@@ -50,10 +50,10 @@ export default function Navigation() {
                   alt=" "
                   src="./src/assets/flavours/bigsmokebbq/images/content/logo.png"
                 />
-              </a>
-              <a
+              </Link>
+              <Link
                 className="small-brand"
-                href="/"
+                to={Path.Home}
                 style={{
                   display: "none",
                   position: "absolute",
@@ -68,26 +68,26 @@ export default function Navigation() {
                   alt=" "
                   src="./src/assets/flavours/bigsmokebbq/images/content/logo-small.png"
                 />
-              </a>
+              </Link>
 
               <ul className={styles.regBtn}>
                 {!isAuthenticated && (
                   <>
-                  <li className={styles.regLi}>
-                  <Link to={Path.Register}>Register</Link>
-                  </li>
-                  <li className={styles.regLi}>
-                    <Link to={Path.Login}>Login</Link>
-                  </li>
+                    <li className={styles.regLi}>
+                      <Link to={Path.Register}>Register</Link>
+                    </li>
+                    <li className={styles.regLi}>
+                      <Link to={Path.Login}>Login</Link>
+                    </li>
                   </>
                 )}
 
                 {isAuthenticated && (
                   <>
-                  <li className={styles.regLi}>
-                    <Link to={Path.Logout}>Logout</Link>
-                  </li>
-                  <span>| {username}</span>
+                    <li className={styles.regLi}>
+                      <Link to={Path.Logout}>Logout</Link>
+                    </li>
+                    <span>| {username}</span>
                   </>
                 )}
 
@@ -102,13 +102,13 @@ export default function Navigation() {
                 style={{ marginTop: 100 }}
               >
                 <li className="active">
-                  <Link to="/">Home</Link>
+                  <Link to={Path.Home}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/menu">Menu</Link>
+                  <Link to={Path.Menu}>Menu</Link>
                 </li>
                 <li>
-                  <Link to="/events">Events</Link>
+                  <Link to={Path.Events}>Events</Link>
                 </li>
               </ul>
               <ul
@@ -118,13 +118,13 @@ export default function Navigation() {
                 style={{ marginTop: 100 }}
               >
                 <li>
-                  <Link to="/story">Story</Link>
+                  <Link to={Path.Story}>Story</Link>
                 </li>
                 <li>
-                  <Link to="/gallery">Gallery</Link>
+                  <Link to={Path.Gallery}>Gallery</Link>
                 </li>
                 <li>
-                  <Link to="/myaccount">Account</Link>
+                  <Link to={Path.MyAccount}>Account</Link>
                 </li>
               </ul>
             </div>

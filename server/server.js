@@ -1379,7 +1379,7 @@
                 "category": "BBQ Dish",
                 "title": "Pulled Pork",
                 "price": "17",
-                "description": "Slowly cooked pig neck with smoked paprika, oregano, black pepper, salt, brown sugar. Marinated for 24 hourse before gently smoked with apple wood.",
+                "description": "Slowly cooked pig neck with smoked paprika, oregano, black pepper, salt, brown sugar. Marinated for 24 hours before gently smoked with apple wood.",
                 "imageUrl": "https://saltpepperskillet.com/wp-content/uploads/bbq-pulled-pork-on-a-sheet-pan-with-bbq-sauce-horizontal-1.jpg"
               },
               "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {

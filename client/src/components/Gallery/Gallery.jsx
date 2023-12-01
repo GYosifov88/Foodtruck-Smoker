@@ -49,19 +49,6 @@ export default function Gallery() {
                         <button type="submit" className={styles.uploadBtn} ><Link to={Path.GalleryAdd}>Upload</Link></button>
                     </div>
                     )}
-                    
-                    {/* <h4 className="hdr3">Follow us on instagram!</h4>
-                    <br />
-                    <div className="text-center">
-                        <a href="#" target="_blank">
-                            <img
-                                src="./src/assets/flavours/bigsmokebbq/images/instagram-btn.png"
-                                alt=""
-                            />
-                        </a>
-                    </div>
-                    <br />
-                    <br /> */}
                 </div>
             </div>
         </div>
