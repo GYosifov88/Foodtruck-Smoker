@@ -1,6 +1,6 @@
 import styles from './Home.module.css'
 
-export default function Recommendations() {
+export default function Home() {
     return (
         <div className="bg-1 section" id="menu">
             <div

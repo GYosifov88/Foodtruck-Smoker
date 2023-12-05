@@ -11,7 +11,8 @@ export default function MenuDetailsModal({
 
     useEffect(() => {
         menuService.getOne(menuid)
-            .then(result => setMenu(result));
+            .then(result => setMenu(result))
+            .catch(err => console.log(err))
     }, [menuid]);
 
     return (
@@ -38,7 +39,6 @@ export default function MenuDetailsModal({
                                     <button className={`btn close ${styles.insideModalBtn}`} onClick={onClose}>Close</button>
                                 </div>
                             </div>
-                            {/* / prodBox */}
                         </div>
             </div>
         </div>

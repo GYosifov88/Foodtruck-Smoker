@@ -13,7 +13,8 @@ export default function GalleryItemDetails() {
     const navigate = useNavigate()
     useEffect(() => {
         galleryService.getOne(id)
-            .then(result => setPhoto(result));
+            .then(result => setPhoto(result))
+            .catch(err => console.log(err))
     }, [id]);
 
     const deleteButtonClickHandler = async () => {

@@ -23,7 +23,8 @@ export default function EventDetails() {
 
     useEffect(() => {
         eventService.getOne(id)
-            .then(setEvent);
+            .then(setEvent)
+            .catch(err => console.log(err))
 
         commentService.getAll(id)
             .then((result) => {
@@ -31,7 +32,8 @@ export default function EventDetails() {
                     type: 'GET_ALL_COMMENTS',
                     payload: result,
                 });
-            });
+            })
+            .catch(err => console.log(err))
     }, [id]);
 
     const addCommentHandler = async (values) => {

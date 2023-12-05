@@ -20,12 +20,10 @@ export default function Login() {
 
     const validateLogin = (values) => {
         const errors = {};
-
         // Example: Check if the email is not empty
         if (!values[LoginFormKeys.Email]) {
             errors[LoginFormKeys.Email] = 'Email is required';
         }
-
         // Example: Check if the password is not empty
         if (!values[LoginFormKeys.Password]) {
             errors[LoginFormKeys.Password] = 'Password is required';

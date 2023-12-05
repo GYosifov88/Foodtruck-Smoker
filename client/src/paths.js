@@ -9,7 +9,7 @@ const Path = {
     GalleryItemId: '/gallery/:id',
     GalleryItemEdit: '/gallery/:id/edit',
     MyAccount: '/myaccount',
-    MyAccountEdit: '/myaccount/edit',
+    MyAccountGallery: '/myaccount/gallery',
     Register: '/register',
     Login: '/login',
     Logout: '/logout',

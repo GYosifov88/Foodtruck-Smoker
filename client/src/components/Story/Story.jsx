@@ -55,13 +55,11 @@ export default function Story() {
                             </div>
                         </div>
                     </div>
-                    {/* / easyBox */}
                     <h3 className="hdr2">Do you like our story?</h3>
                     <h4 className="hdr3">
                         Please visit our <a href="#">facebook page</a> to know even more!
                     </h4>
                 </div>
-                {/* / container */}
             </div>
         </div>
 

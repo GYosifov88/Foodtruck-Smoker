@@ -19,16 +19,15 @@ export default function GalleryEditItem() {
         galleryService.getOne(id)
             .then(result => {
                 setPhoto(result);
-            });
+            })
+            .catch(err => console.log(err))
     }, [id]);
 
     const PhotoEditHandler = async (values) => {
         try {
             await galleryService.edit(id, values);
-
             navigate(`${Path.Gallery}`);
         } catch (err) {
-
             console.log(err);
         }
     }
@@ -66,6 +65,7 @@ export default function GalleryEditItem() {
                                             name="title"
                                             id="title"
                                             placeholder="enter the title"
+                                            required="true"
                                             value={values.title}
                                             onChange={onChange}
                                         />
@@ -78,6 +78,7 @@ export default function GalleryEditItem() {
                                             id="category"
                                             className="form-control"
                                             placeholder="select category"
+                                            required="true"
                                             value={values.category}
                                             onChange={onChange}
                                         >
@@ -95,6 +96,7 @@ export default function GalleryEditItem() {
                                             name="place"
                                             id="place"
                                             placeholder="add where it was"
+                                            required="true"
                                             value={values.place}
                                             onChange={onChange}
                                         />
@@ -107,6 +109,7 @@ export default function GalleryEditItem() {
                                             name="imageUrl"
                                             id="imageUrl"
                                             placeholder="add your picture"
+                                            required="true"
                                             value={values.imageUrl}
                                             onChange={onChange}
                                         />

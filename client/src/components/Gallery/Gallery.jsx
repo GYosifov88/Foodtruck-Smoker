@@ -12,6 +12,7 @@ export default function Gallery() {
         isAuthenticated,
         username,
       } = useContext(AuthContext);
+      
     const [pictures, setPictures] = useState([]);
 
     useEffect(() => {

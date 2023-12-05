@@ -27,7 +27,6 @@ export default function Register() {
         const errors = {};
 
         if (values[RegisterFormKeys.Password] !== values[RegisterFormKeys.ConfirmPassword]) {
-            errors[RegisterFormKeys.Password] = "Passwords don't match";
             errors[RegisterFormKeys.ConfirmPassword] = "Passwords don't match";
         }
 
@@ -138,7 +137,6 @@ export default function Register() {
                         </div>
                     </div>
                 </div>
-                {/* / easyBox */}
             </div>
         </div>
     )

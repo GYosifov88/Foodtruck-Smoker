@@ -98,7 +98,6 @@ export default function Menu() {
                                     ))}
                                 </div>
                             </div>
-                            {/* / menuBox */}
                         </div>
                         <div className="clearfix visible-sm" />
                         <div className="col-md-4 col-sm-12">
@@ -127,7 +126,6 @@ export default function Menu() {
                                     ))}
                                         </div>
                                     </div>
-                                    {/* / menuBox */}
                                 </div>
                             </div>
                         </div>

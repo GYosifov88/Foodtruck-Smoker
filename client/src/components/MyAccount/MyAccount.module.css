@@ -7,10 +7,13 @@
     height: 100vh; */
 }
 
-.delBtn {
-    background-color: rgb(190, 73, 73);
+.myPicturesList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.editBtn {
-    background-color: rgb(73, 190, 126);
+h6{
+    text-align: center;
+    padding-right: 220px;
 }
