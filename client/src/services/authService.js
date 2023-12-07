@@ -25,9 +25,3 @@ export const getCurrentUser = async (userId) => {
 
     return result;
 };
-
-export const edit = async (userId, userData) => {
-    const result = await request.put(`${baseUrl}/me/${userId}`, userData);
-  
-    return result;
-  };

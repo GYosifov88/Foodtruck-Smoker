@@ -4,8 +4,8 @@ const reducer = (state, action) => {
             return [...action.payload];
         case 'ADD_COMMENT':
             return [...state, action.payload];
-        case 'EDIT_COMMENT':
-            return state.map(c => c._id === action.payload._id ? { ...c, text: action.payload.text } : c)
+        // case 'EDIT_COMMENT':
+        //     return state.map(c => c._id === action.payload._id ? { ...c, text: action.payload.text } : c)
         default:
             return state;
     }

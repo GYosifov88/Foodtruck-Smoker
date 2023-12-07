@@ -1,7 +1,6 @@
 import { useState, createContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import * as authService from '../services/authService';
-import usePersistedState from "../hooks/usePersistedState";
 import Path from '../paths';
 
 
@@ -12,6 +11,7 @@ export const AuthProvider = ({
 }) => {
 
     const navigate = useNavigate();
+
     const [auth, setAuth] = useState(() => {
         localStorage.removeItem('accessToken');
     

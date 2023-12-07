@@ -28,9 +28,9 @@ export default function MyAccount() {
                 .catch((err) => {
                     navigate(`${Path.Home}`);
                 });
-            galleryService.getAllPhotosOfUser(userId)
-                .then(result => setPictures(result))
-                .catch(err => console.log(err))
+            // galleryService.getAllPhotosOfUser(userId)
+            //     .then(result => setPictures(result))
+            //     .catch(err => console.log(err))
         }
 
     }, [id, userId]);

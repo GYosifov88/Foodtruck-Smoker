@@ -3,6 +3,9 @@ Simple single page React.js WEB application for BBQ and smoking meats foodtruck 
 Main idea of the application is for advertising the foodtruck and reach as many people as possible. Show the menu and food that is being offered. Listing the events and venues where the foodtruck will be. Gallery for pictures from the "kitchen", from the events and of the food that is prepared.
 Application has public (Accessible without authentication) and private part (Available for Registered Users).
 
+# Requirements:
+* node.js: v18.16.1
+
 # Dependecies:
 * "react-router-dom": "^6.18.0"
 * "react": "^18.2.0"

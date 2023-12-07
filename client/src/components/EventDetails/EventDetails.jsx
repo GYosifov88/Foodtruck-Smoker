@@ -113,7 +113,7 @@ export default function EventDetails() {
                                 <article >
                                     {/* <label >Add new comment:</label> */}
                                     <form className="simpleForm" onSubmit={onSubmit} >
-                                        <textarea className="form-control" value={values[CommentFormKeys.Comment]} onChange={onChange} name="comment" placeholder="Comment......"></textarea>
+                                        <textarea className="form-control" value={values[CommentFormKeys.Comment]} required={true} onChange={onChange} name="comment" placeholder="Comment......"></textarea>
                                         {errors[CommentFormKeys.Comment] && (
                                             <p className={`errorMsg ${styles.errorText}`}>{errors[CommentFormKeys.Comment]}</p>
                                         )}

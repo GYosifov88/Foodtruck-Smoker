@@ -71,7 +71,7 @@ export default function GalleryAddItem() {
                                             name="title"
                                             id="title"
                                             placeholder="enter the title"
-                                            required="true"
+                                            required={true}
                                             value={titleValue}
                                             onChange={titleChangeHandler}
                                         />
@@ -84,7 +84,7 @@ export default function GalleryAddItem() {
                                             id="category"
                                             className="form-control"
                                             placeholder="select category"
-                                            required="true"
+                                            required={true}
                                             value={categoryValue}
                                             onChange={categoryChangeHandler}
                                         >
@@ -102,7 +102,7 @@ export default function GalleryAddItem() {
                                             name="place"
                                             id="place"
                                             placeholder="add where it was"
-                                            required="true"
+                                            required={true}
                                             value={placeValue}
                                             onChange={placeChangeHandler}
                                         />
@@ -115,7 +115,7 @@ export default function GalleryAddItem() {
                                             name="imageUrl"
                                             id="imageUrl"
                                             placeholder="add your picture"
-                                            required="true"
+                                            required={true}
                                             value={imageUrlValue}
                                             onChange={imageUrlChangeHandler}
                                         />

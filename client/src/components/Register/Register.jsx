@@ -71,7 +71,7 @@ export default function Register() {
                                         <label htmlFor="email">E-mail address</label>
                                         <input
                                             type="email"
-                                            required="true"
+                                            required={true}
                                             id="email"
                                             className="form-control"
                                             name="email"
@@ -84,7 +84,7 @@ export default function Register() {
                                         <label htmlFor="username">Username</label>
                                         <input
                                             type="username"
-                                            required="true"
+                                            required={true}
                                             id="username"
                                             className="form-control"
                                             name="username"
@@ -98,6 +98,7 @@ export default function Register() {
                                         <input
                                             type="password"
                                             className="form-control"
+                                            required={true}
                                             name="password"
                                             id="password"
                                             placeholder="type your password"
@@ -111,6 +112,7 @@ export default function Register() {
                                         <input
                                             type="password"
                                             className="form-control"
+                                            required={true}
                                             name="confirm_password"
                                             id="confirm_password"
                                             placeholder="confirm your password"

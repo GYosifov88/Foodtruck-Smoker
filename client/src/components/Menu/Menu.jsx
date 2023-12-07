@@ -1,6 +1,6 @@
 import * as menuService from "../../services/menuService";
 import { useState, useEffect } from "react";
-import MenuItem from "./MenuItem";
+import MenuItem from "../MenuItem/MenuItem";
 import MenuDetailsModal from "../MenuDetailsModal/MenuDetailsModal";
 
 export default function Menu() {
